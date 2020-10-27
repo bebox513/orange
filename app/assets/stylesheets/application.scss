@@ -1,0 +1,49 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  margin-top: 50px;
+}
+
+.log-in-block{
+  text-align: center;
+  border: solid 1px;
+  width: 700px;
+  padding:50px;
+  margin-top: 130px;
+  border-radius: 25px;
+  max-width: 700px;
+  width: 90%;
+  min-width: 250px;
+}
+
+.log-in-title{
+  font-weight: 600;
+}
+
+.log-in-field{
+  padding-top: 40px;
+}
+
+.log-in-form{
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.log-in-btn{
+  padding: 2px;
+  color: white;
+  background-color: #0099FF;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-top: 40px;
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.log-in-link{
+  font-size: 16px;
+  padding-top: 20px;
+}

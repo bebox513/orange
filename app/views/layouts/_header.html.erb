@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-fixed-top header-padding">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+      <span class="sr-only">メニュー</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <div id="gnavi" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><%= link_to "個人ユーザーからログアウト", destroy_user_session_path, method: :delete %></li>
+      <% elsif corp_user_signed_in? %>
+        <li><%= link_to "法人ユーザーからログアウト", destroy_corp_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><a href="/users/sign_up">一般ユーザーの新規登録</a></li>
+        <li><a href="/users/sign_in">一般ユーザーのログイン</a></li>
+        <li><a href="/corp_users/sign_up">法人ユーザーの新規登録</a></li>
+        <li><a href="/corp_users/sign_in">法人ユーザーのログイン</a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
