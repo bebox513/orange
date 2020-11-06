@@ -16,4 +16,5 @@
       <%= f.submit "新規登録", class: "log-in-btn" %>
   <% end %>
   <p class="log-in-link">既にアカウントをお持ちの方<%= link_to "ログイン", user_session_path %></p>
+  <%= render "devise/shared/links" %>
 </div>
