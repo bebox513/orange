@@ -5,33 +5,62 @@ body{
   margin-top: 50px;
 }
 
-.log-in-block{
+.header{
+  background-color: #FF9800;
+}
+
+.title-logo{
+  margin: 0px;
+  position: fixed;
+}
+
+.dashboard-padding{
+  padding-left: 200px;
+}
+
+.dashboard{
+  top: 50px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  background: #FFF8E1;
+ }
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+
+.sign-in-block{
+  margin-top: 150px;
   text-align: center;
   border: solid 1px;
   width: 700px;
   padding:50px;
-  margin-top: 130px;
   border-radius: 25px;
   max-width: 700px;
   width: 90%;
   min-width: 250px;
 }
 
-.log-in-title{
+.sign-in-title{
   font-weight: 600;
 }
 
-.log-in-field{
+.sign-in-field{
   padding-top: 40px;
 }
 
-.log-in-form{
+.sign-in-form{
   width: 90%;
   height: 30px;
   border-radius: 5px;
 }
 
-.log-in-btn{
+.sign-in-btn{
   padding: 2px;
   color: white;
   background-color: #0099FF;
@@ -43,7 +72,7 @@ body{
   font-size: 15px;
 }
 
-.log-in-link{
+.sign-in-link{
   font-size: 16px;
   padding-top: 20px;
 }
