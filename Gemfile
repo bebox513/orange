@@ -32,6 +32,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'rails-i18n'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
