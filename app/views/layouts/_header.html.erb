@@ -1,24 +1,12 @@
-<nav class="navbar navbar-default navbar-fixed-top header-padding">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
-      <span class="sr-only">メニュー</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-
+<nav class="navbar navbar-default navbar-fixed-top header">
   <div id="gnavi" class="collapse navbar-collapse">
+    <h1 class="title-logo"><%= link_to "Orange", root_path %></h1>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <li><%= link_to "個人ユーザーからログアウト", destroy_user_session_path, method: :delete %></li>
-      <% elsif corp_user_signed_in? %>
-        <li><%= link_to "法人ユーザーからログアウト", destroy_corp_user_session_path, method: :delete %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
       <% else %>
-        <li><a href="/users/sign_up">一般ユーザーの新規登録</a></li>
-        <li><a href="/users/sign_in">一般ユーザーのログイン</a></li>
-        <li><a href="/corp_users/sign_up">法人ユーザーの新規登録</a></li>
-        <li><a href="/corp_users/sign_in">法人ユーザーのログイン</a></li>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
       <% end %>
     </ul>
   </div>
