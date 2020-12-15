@@ -11,6 +11,9 @@
 
   <body>
     <%= render'layouts/header' %>
-    <%= yield %>
+      <%= render'layouts/dashboard' %>
+    <div class="dashboard-padding">
+      <%= yield %>
+    </div>
   </body>
 </html>
