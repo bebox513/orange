@@ -1,0 +1,9 @@
+<% @messages.each do |m| %>
+  <p><%= m.content %></p>
+<% end %>
+<%= form_for @message do |f| %>
+  <%= f.label :メッセージ %>
+  <%= f.text_field :content%>
+  <%= f.hidden_field :room_id, :value => @room.id %>
+  <%= f.submit "送る" %>
+<% end %>
