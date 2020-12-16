@@ -43,7 +43,7 @@ RSpec.describe User, type: :model do
     it "メールアドレスに@がないと無効な状態であること" do
       user = build(:user, email: "a" * 20)
       user.valid?
-      expect(user.errors[:email]).to include("が間違っています")
+      expect(user.errors[:email]).to include("の形式が間違っています")
     end
     it "パスワードがなければ無効な状態であること" do
       user = build(:user, password: nil)
