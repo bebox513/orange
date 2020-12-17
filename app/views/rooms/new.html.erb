@@ -1,5 +1,7 @@
-<%= form_for @room do |f| %>
-  <%= f.label :名前 %>
-  <%= f.text_field :name %>
-  <%= f.submit "作成する" %>
-<% end %>
+<div class="new-room-block container">
+  <h2 class="new-room-title">チャットルームの作成</h2>
+  <%= form_for @room do |f| %>
+    <%= f.text_field :name, placeholder: "利用者名", class: "new-room-form" %>
+    <%= f.submit "作成する", class: "new-room-btn" %>
+  <% end %>
+</div>
