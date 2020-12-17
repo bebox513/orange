@@ -4,12 +4,8 @@
       <%= content_tag :div, message, class: message_type %>
     <% end %>
 　<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="sign-in-field">
       <%= f.text_field :email, placeholder: "メールアドレス", class: "sign-in-form" %>
-    </div>
-    <div class="sign-in-field">
       <%= f.password_field :password, placeholder: "パスワード", class: "sign-in-form" %>
-    </div>
       <%= f.submit "ログイン", class: "sign-in-btn" %>
   <% end %>
   <p class="sign-in-link">アカウントをお持ちでない方<%= link_to "新規登録", new_user_registration_path %></p>
