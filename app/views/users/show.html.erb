@@ -1,3 +1,7 @@
+<% if current_user = @user %>
+  <%= link_to "プロフィール編集", edit_user_registration_path(params[:id]) %>
+<% end %>
+
 <% if current_user != @user %>
   <% if @user.followed_by?(current_user) %>
     <p><%=link_to "フォロー済み", user_relationships_path(@user.id), method: :delete %></p>
