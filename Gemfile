@@ -33,8 +33,9 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
+gem 'font-awesome-rails'
+gem 'mini_magick', '~> 4.8'
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

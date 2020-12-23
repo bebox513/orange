@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 body{
   margin-top: 50px;
@@ -108,5 +109,39 @@ body{
   width: 100px;
   height: 40px;
   font-size: 15px;
+}
 
+.avatar-none{
+  font-size: 190px;
+}
+
+.mypage-avatar{
+  border-radius: 95px;
+}
+
+#img_field{
+  width: 190px;
+}
+
+#file{
+  display: none;
+}
+
+.edit-form{
+  width: 280px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 40px 40px 0px 40px;
+}
+
+.edit-btn{
+  padding: 2px;
+  color: white;
+  background-color: #0099FF;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  margin: 100px;
 }

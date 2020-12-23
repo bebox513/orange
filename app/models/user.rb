@@ -20,6 +20,10 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  def avatar_resize
+    return self.avatar.variant(combine_options:{gravity: :center, resize:"190x190^", crop:"190x190+0+0"}).processed
+  end
+
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
   end
