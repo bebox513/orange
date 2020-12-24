@@ -115,8 +115,53 @@ body{
   font-size: 190px;
 }
 
+.mypage{
+  position: relative;
+  border-bottom: solid 1px;
+  padding: 20px
+}
+
 .mypage-avatar{
   border-radius: 95px;
+}
+
+
+.mypage-block{
+  position: absolute;
+  display: flex;
+}
+
+.mypage-name{
+  padding-left: 20px;
+  font-size: 45px;
+}
+
+.mypage-edit-btn{
+  padding: 25px;
+}
+
+.follow-btn{
+  padding-top: 20px;
+  a{
+    padding: 2px;
+    color: white;
+    background-color: #0099FF;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    margin: 40px;
+    &:hover{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.mypage-text{
+  padding-top: 100px;
+  padding-left: 220px;
 }
 
 #img_field{
@@ -134,6 +179,14 @@ body{
   margin: 40px 40px 0px 40px;
 }
 
+.edit-text{
+  width: 400px;
+  height: 100px;
+  border-radius: 5px;
+  margin: 50px 40px 0px 40px;
+
+}
+
 .edit-btn{
   padding: 2px;
   color: white;
@@ -143,5 +196,5 @@ body{
   width: 100px;
   height: 40px;
   font-size: 15px;
-  margin: 100px;
+  margin: 40px;
 }
