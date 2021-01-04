@@ -15,11 +15,11 @@ body{
   position: fixed;
 }
 
-.dashboard-padding{
+.sidebar-padding{
   padding-left: 200px;
 }
 
-.dashboard{
+.sidebar{
   top: 50px;
   box-sizing: border-box;
   height: 100%;
@@ -113,22 +113,29 @@ body{
 
 .avatar-none{
   font-size: 190px;
+  color: 	#808080;
 }
 
 .mypage{
-  position: relative;
   border-bottom: solid 1px;
-  padding: 20px
+  padding: 20px;
+  min-height: 230px;
+  width: 100%;
 }
 
 .mypage-avatar{
   border-radius: 95px;
 }
 
-
-.mypage-block{
+.mypage-avatar-block{
   position: absolute;
   display: flex;
+
+}
+
+.mypage-block{
+  position: relative;
+
 }
 
 .mypage-name{
@@ -160,8 +167,8 @@ body{
 }
 
 .mypage-text{
-  padding-top: 100px;
-  padding-left: 220px;
+  padding-top: 70px;
+  padding-left: 210px;
 }
 
 #img_field{
@@ -194,7 +201,84 @@ body{
   border: 1px solid;
   border-radius: 5px;
   width: 100px;
-  height: 40px;
-  font-size: 15px;
   margin: 40px;
+}
+
+.sidebar-avatar{
+  width: 130px;
+  margin: 10px 35px 10px 35px;
+  border-radius: 95px;
+}
+
+.sidebar-avatar-none{
+  font-size: 130px;
+  margin: 10px 35px 10px 35px;
+  color: 	#808080;
+  &:hover{
+    color: #808080;
+  }
+}
+
+.sidebar-name{
+  font-size: 30px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  &:hover{
+    color: black;
+  }
+}
+
+.message-form-block{
+  border: 1px solid;
+  height: 180px;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.message-form{
+  height: 145px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  outline: none;
+  resize: none;
+}
+
+.message-btn{
+  font-size: 17px;
+  border: none;
+  background-color: transparent;
+  margin-left: 96%;
+}
+
+.message-block{
+  border-bottom: solid 1px;
+  width: 100%;
+}
+
+.message-avatar{
+  margin: 5px;
+  width: 30px;
+  border-radius: 95px;
+}
+
+.message-avatar-none{
+  margin: 5px;
+  width: 30px;
+  font-size: 30px;
+}
+
+.message-name{
+  font-size: 15px;
+}
+
+.message-profile-block{
+  display: flex;
+}
+
+.message{
+  font-size: 15px;
 }

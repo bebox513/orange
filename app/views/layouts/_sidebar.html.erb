@@ -1,0 +1,19 @@
+<div class="sidebar">
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user.id) do %>
+        <% if current_user.avatar.attached? %>
+          <%= image_tag(current_user.avatar_resize, class: "sidebar-avatar") %>
+        <% else %>
+          <%= fa_icon "user-circle", class: "sidebar-avatar-none" %>
+        <% end %>
+        <p class="sidebar-name"><%= current_user.name %></p>
+      <% end %>
+    <% end %>
+  <ul class="channel_list">
+    <% if user_signed_in? %>
+      <div data-turbolinks="false">
+      <%= link_to "メッセージ作成", new_room_path %>
+      </div>
+    <% end %>
+  </ul>
+</div>
