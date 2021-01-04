@@ -1,9 +1,24 @@
 <% @messages.each do |m| %>
-  <p><%= m.content %></p>
+  <div class="message-block">
+    <div class="message-profile-block">
+      <% if m.user.avatar.attached? %>
+        <%= image_tag(m.user.avatar_resize, class: "message-avatar") %>
+      <% else %>
+        <%= fa_icon "user-circle", class: "message-avatar-none" %>
+      <% end %>
+      <p class="message-name"><%= m.user.name %></p>
+    </div>
+    <p class="message"><%= safe_join(m.content.split("\n"),tag(:br))%></p>
+  </div>
+
 <% end %>
-<%= form_for @message do |f| %>
-  <%= f.label :メッセージ %>
-  <%= f.text_field :content%>
-  <%= f.hidden_field :room_id, :value => @room.id %>
-  <%= f.submit "送る" %>
-<% end %>
+
+<div class="message-form-block">
+  <%= form_for @message do |f| %>
+    <%= f.text_area :content, class: "message-form" %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
+    <%= button_tag :type => "submit", :class =>"message-btn" do %>
+      <%= fa_icon "paper-plane" %>
+    <% end %>
+  <% end %>
+</div>
