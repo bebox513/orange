@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context "バリデーション" do
-    it "名前、メール、パスワードがあれば有効な状態であること" do
+    it "名前、メール、パスワード,役職があれば有効な状態であること" do
       user = create(:user)
       expect(user).to be_valid
     end
@@ -59,5 +59,11 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors[:password]).to include("は5文字以上で入力してください")
     end
+    it "役職が選択されていなければ無効な状態であること" do
+      user = build(:user, role: nil)
+      user.valid?
+      expect(user.errors[:role]).to include("を入力してください")
+    end
+
   end
 end

@@ -7,17 +7,10 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
-        remember_me: "ログインを記憶"
-      corp_user:
-        name: "ユーザー名"
-        current_password: "現在のパスワード"
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "確認用パスワード"
+        role: 役職
         remember_me: "ログインを記憶"
     models:
-      user: "ユーザ"
-      corp_user: "法人ユーザー"
+      user: "ユーザー"
   devise:
     confirmations:
       new:
