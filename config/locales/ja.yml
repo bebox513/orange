@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    attributes:
+      room:
+        name: ルームネーム
+      message:
+        content: メッセージ
+
   errors:
     format: "%{attribute}%{message}"
     messages:
