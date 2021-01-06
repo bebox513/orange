@@ -6,6 +6,7 @@
     <%= f.text_field :email, placeholder: "メールアドレス", class: "sign-in-form" %>
     <%= f.password_field :password, placeholder: "パスワード", class: "sign-in-form" %>
     <%= f.password_field :password_confirmation, placeholder: "パスワードの確認", class: "sign-in-form" %>
+    <%= f.select :role, [["家族または利用者", 1],["介護職員", 2],["ケアマネージャー", 3]], {include_blank: "選択して下さい"}, {class: "sign-in-form"} %>
     <%= f.submit "新規登録", class: "sign-in-btn" %>
   <% end %>
   <p class="sign-in-link">既にアカウントをお持ちの方<%= link_to "ログイン", user_session_path %></p>
