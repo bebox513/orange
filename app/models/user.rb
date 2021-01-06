@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }, length: { in: 1..50 }
   validates :password, presence: true, on: :create, length: { in: 5..10 }
   validates :name, presence: true, length: { in: 1..10 }
+  validates :role, presence: true
 
   has_many :messages, dependent: :destroy
 
