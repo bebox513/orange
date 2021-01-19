@@ -35,6 +35,7 @@ gem 'devise-i18n-views'
 gem 'rails-i18n'
 gem 'font-awesome-rails'
 gem 'mini_magick', '~> 4.8'
+gem 'faker'
 # Use ActiveStorage variant
 
 # Use Capistrano for deployment
