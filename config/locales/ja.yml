@@ -1,6 +1,14 @@
 ja:
   activerecord:
     attributes:
+      care_diary:
+        name: 名前
+        date: 日付
+        temperature: 体温
+        breakfast_meal_intake: 朝食
+        lunch_meal_intake: 昼食
+        dinner_meal_intake: 夕食
+        notes: 特記事項
       room:
         name: ルームネーム
       message:
