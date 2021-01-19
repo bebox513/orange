@@ -283,3 +283,204 @@ body{
 .message{
   font-size: 15px;
 }
+
+.care-diary-block{
+  margin-top: 150px;
+  border: solid 1px;
+  width: 700px;
+  padding:50px;
+  border-radius: 25px;
+  max-width: 700px;
+  width: 90%;
+  min-width: 250px;
+}
+
+.care-diary-date-form{
+  width: 130px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 30px;
+  border: 2px solid;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.care-diary-form-block{
+  display: inline-block;
+  width: 75px;
+  position: relative;
+  margin-right: 10px;
+  input{
+    width: 75px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 30px;
+    border: 2px solid;
+    text-align: center;
+  }
+  p{
+    position: absolute;
+    top: 35px;
+    left: 53px;
+    background-color: white;
+  }
+}
+
+.care-diary-notes-form{
+  border-radius: 5px;
+  margin-top: 30px;
+  border: 2px solid;
+  height: 145px;
+  width: 540px;
+  outline: none;
+  resize: none;
+}
+
+.care-diary-btn{
+  padding: 2px;
+  color: white;
+  background-color: #0099FF;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 40px 40%;
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.care-diary-title-name{
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.care-diary-date{
+  font-size: 25px;
+  text-align: center;
+  width: 100px;
+  margin-left: 90px;
+  p{
+    margin: 0;
+  }
+}
+
+.care-diary-block1{
+  margin: 30px 89px;
+}
+
+.care-diary-index-block2{
+  display: inline-block;
+  border: solid 1px;
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 210px;
+  margin: 10px;
+  a{
+    text-decoration: none ;
+    color: #333333;
+  }
+  p{
+    display: inline-block;
+  }
+  .date{
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  .bolder{
+    font-weight: bolder;
+  }
+}
+
+.left-button{
+  width: 30px;
+  height: 160px;
+  font-size: 50px;
+  padding: 50px 4px;
+  border: 1px solid white;
+  color: #DD7F12;
+  background-color: #EFD100;
+  position: absolute;
+  top: 340px;
+  left: 220px;
+}
+
+.right-button{
+  width: 30px;
+  height: 160px;
+  font-size: 50px;
+  padding: 50px 4px;
+  border: 1px solid white;
+  color: #DD7F12;
+  background-color: #EFD100;
+  position: absolute;
+  top: 340px;
+  right: 20px;
+}
+
+.care-diary-block-show{
+  min-width: 369px;
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 30px 89px;
+  padding: 0px;
+  position: relative;
+  font-size: 0px;
+  p{
+    font-size: 30px;
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+    display: inline-block;
+  }
+  .block1 {
+    position: absolute;
+    border-bottom: 1px solid;
+    .date{
+      width: 85px;
+      border-right: 1px solid;
+    }
+    .temperature{
+      border-right: 1px solid;
+    }
+  }
+  .block2 {
+    top: -1px;
+    left: 288px;
+    width: 368px;
+    position: absolute;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    .breakfast-meal-intake{
+      border-left: 1px dashed;
+      width: 86px;
+      text-align: center;
+    }
+    .lunch-meal-intake{
+      border-left: 1px dashed;
+      width: 86px;
+      text-align: center;
+    }
+    .dinner-meal-intake{
+      border-right: 1px solid;
+      border-left: 1px dashed;
+      width: 86px;
+      text-align: center;
+    }
+  }
+  .notes {
+  font-size: 20px;
+  box-sizing: border-box;
+  margin: 10px;
+  padding-top: 73px;
+  }
+  @media screen and (max-width: 1080px) {
+    .block2 {
+      top: 62px;
+      left: 0px;
+    }
+    .notes{
+      padding-top: 136px;
+    }
+  }
+}
