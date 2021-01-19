@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   resources :messages, :only => [:create]
   resources :rooms, :only => [:new, :create, :show, :index]
+  resources :care_diaries, :only => [:index, :show, :new, :create, :edit, :update]
 end
