@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }, length: { in: 1..50 }
   validates :password, presence: true, on: :create, length: { in: 5..10 }
   validates :name, presence: true, length: { in: 1..10 }
-  validates :role, presence: true
+  validates :role, presence: true, length: { in: 1..3 }
 
   has_many :messages, dependent: :destroy
 
@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships, source: :follower
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
   has_many :followers, through: :passive_relationships, source: :following
+
+  has_many :care_diaries, dependent: :destroy
 
   has_one_attached :avatar
 
