@@ -1,0 +1,21 @@
+<div class="care-diary-title-name">
+  <p><%= @care_diary.name %>の介護記録</p>
+</div>
+<div class="care-diary-date">
+  <p><%= @care_diary.date.year %>年</p>
+  <p><%= @care_diary.date.month %>月</p>
+</div>
+<div class="care-diary-block-show">
+  <div class="block1">
+    <p class="date"><%= @care_diary.date.day %>日</p>
+    <p class="temperature">体温：<%= @care_diary.temperature %>℃</p>
+  </div>
+  <div class="block2">
+    <p>食事量</p>
+    <p class="breakfast-meal-intake"><%= @care_diary.breakfast_meal_intake %>割</p>
+    <p class="lunch-meal-intake"><%= @care_diary.lunch_meal_intake %>割</p>
+    <p class="dinner-meal-intake"><%= @care_diary.dinner_meal_intake %>割</p>
+  </div>
+  <p class="notes">特記事項：<br><%= @care_diary.notes %></p>
+</div>
+<%= link_to "介護日誌編集", edit_care_diary_path(params[:id]) %>

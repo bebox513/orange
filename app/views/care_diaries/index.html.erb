@@ -1,0 +1,32 @@
+<div class="care-diary-title-name">
+  <p><%= current_user.name %>の介護記録</p>
+</div>
+<div class="care-diary-date">
+  <p><%= @cd_date.year %>年</p>
+  <p><%= @cd_date.month %>月</p>
+</div>
+<%= link_to care_diaries_path(cd_back_date: @cd_date.last_month) do %>
+  <%= fa_icon "caret-left", class: "left-button" %>
+<% end %>
+<%= link_to care_diaries_path(cd_next_date: @cd_date.next_month) do %>
+  <%= fa_icon "caret-right", class: "right-button" %>
+<% end %>
+<div class="care-diary-block1">
+  <% @care_diaries.each do |c| %>
+    <div class="care-diary-index-block2">
+      <%= link_to care_diary_path(c.id) do %>
+        <div>
+          <p class="date"><%= c.date.day %>日</p>
+          <p>体温<%= c.temperature %>℃</p>
+        </div>
+        <div>
+          <p>食事量</p>
+          <p>朝<%= c.breakfast_meal_intake %>割</p>
+          <p>昼<%= c.lunch_meal_intake %>割</p>
+          <p>夜<%= c.dinner_meal_intake %>割</p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<%= link_to "介護日誌作成", new_care_diary_path %>

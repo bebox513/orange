@@ -1,0 +1,32 @@
+<div class="care-diary-block container">
+  <%= form_for @care_diary do |f| %>
+    <%= f.label :date, "日付" %>
+    <%= f.date_field :date, value:@date, class: "care-diary-date-form" %>
+    <%= f.label :temperature, "体温" %>
+    <div class="care-diary-form-block">
+      <%= f.number_field :temperature, step: "0.1" %>
+      <p>℃</p>
+    </div>
+    <div>
+      <%= f.label :breakfast_meal_intake, "朝食量" %>
+      <div class="care-diary-form-block">
+        <%= f.number_field :breakfast_meal_intake %>
+        <p>割</p>
+      </div>
+      <%= f.label :lunch_meal_intake, "昼食量" %>
+      <div class="care-diary-form-block">
+        <%= f.number_field :lunch_meal_intake %>
+        <p>割</p>
+      </div>
+      <%= f.label :dinner_meal_intake, "夕食量" %>
+      <div class="care-diary-form-block">
+        <%= f.number_field :dinner_meal_intake %>
+        <p>割</p>
+      </div>
+    </div>
+    <%= f.text_area :notes, class: "care-diary-notes-form" %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :name, :value => current_user.name %>
+    <%= f.submit "編集する", class: "care-diary-btn" %>
+  <% end %>
+</div>
