@@ -64,6 +64,5 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors[:role]).to include("を入力してください")
     end
-
   end
 end
