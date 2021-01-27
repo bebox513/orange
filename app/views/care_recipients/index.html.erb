@@ -1,0 +1,19 @@
+<div class="page-title">
+  <p>利用者一覧</p>
+</div>
+<div class="care-recipient-index-block">
+  <table class="care-recipient-tbl">
+    <tr><th></th><th>名前</th><th class="sex">性別</th><th>事業所</th><th>ケアマネ</th><th>要介護度</th></tr>
+    <% @care_recipients.each.with_index(1) do |cr,i| %>
+      <tr>
+        <th class="small-sell"><%= link_to care_recipient_path(cr.id) do %><%= i %><% end %></th>
+        <td class="sell"><%= cr.name %></td>
+        <td class="small-sell"><%= cr.sex %></td>
+        <td><%= cr.facility_in_charge %></td>
+        <td><%= cr.manager_in_charge %></td>
+        <td><%= cr.degree_care_required %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "利用者作成", new_care_recipient_path %>
+</div>

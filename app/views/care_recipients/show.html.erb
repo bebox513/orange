@@ -1,0 +1,25 @@
+<div class="page-title">
+  <p>個別情報</p>
+</div>
+<div class="care-recipient-show-block1">
+  <div class="care-recipient-show-block2">
+    <p>名前：<%= @care_recipient.name %></p>
+    <p>性別：<%= @care_recipient.sex %></p>
+  </div>
+  <div class="care-recipient-show-block2">
+    <p>生年月日：<%= @care_recipient.birthday.strftime("%Y年%m月%d日") %></p>
+    <p>年齢：<%= @care_recipient.age %>歳</p>
+  </div>
+  <div class="care-recipient-show-block2">
+    <p>担当事業所：<%= @care_recipient.facility_in_charge %></p>
+    <p>担当ケアマネージャー：<%= @care_recipient.manager_in_charge %></p>
+  </div>
+  <div class="care-recipient-show-block2">
+    <p>要介護度：<%= @care_recipient.degree_care_required %></p>
+    <p>認知症：<%= @care_recipient.dementia %></p>
+  </div>
+  <div class="care-recipient-show-block3">
+    <p class="notes">特記事項：<br><%= safe_join(@care_recipient.notes.split("\n"),tag(:br)) %></p>
+  </div>
+</div>
+<%= link_to "情報編集", edit_care_recipient_path(params[:id]) %>

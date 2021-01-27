@@ -1,0 +1,2 @@
+module CareRecipientsHelper
+end
