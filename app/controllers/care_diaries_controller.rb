@@ -14,8 +14,10 @@ class CareDiariesController < ApplicationController
     else
       #最新の日付のレコードを取得してその月のレコードを取得
       @care_diary = current_user.care_diaries.order(date: :desc).first
-      @cd_date = @care_diary.date
-      @care_diaries = current_user.care_diaries.where(date: @cd_date.beginning_of_month..@cd_date.end_of_month).order(date: "ASC")
+      if @care_diary.present?
+        @cd_date = @care_diary.date
+        @care_diaries = current_user.care_diaries.where(date: @cd_date.beginning_of_month..@cd_date.end_of_month).order(date: "ASC")
+      end
     end
   end
 
