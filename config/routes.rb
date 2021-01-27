@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  #削除予定
   root to: 'tops#show'
 
   devise_for :users
@@ -14,4 +13,5 @@ Rails.application.routes.draw do
   resources :messages, :only => [:create]
   resources :rooms, :only => [:new, :create, :show, :index]
   resources :care_diaries, :only => [:index, :show, :new, :create, :edit, :update]
+  resources :care_recipients, :only => [:index, :show, :new, :create, :edit, :update]
 end
