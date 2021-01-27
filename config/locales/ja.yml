@@ -1,6 +1,16 @@
 ja:
   activerecord:
     attributes:
+      care_recipient:
+        name: 名前
+        sex: 性別
+        birthday: 生年月日
+        age: 年齢
+        facility_in_charge: 担当事業所
+        manager_in_charge: 担当ケアマネージャー
+        degree_care_required: 要介護度
+        dementia: 認知症
+        notes: 特記事項
       care_diary:
         name: 名前
         date: 日付
@@ -13,7 +23,6 @@ ja:
         name: ルームネーム
       message:
         content: メッセージ
-
   errors:
     format: "%{attribute}%{message}"
     messages:
@@ -25,3 +34,4 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      not_a_number: は数値で入力してください
