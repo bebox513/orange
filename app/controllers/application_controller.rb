@@ -6,6 +6,34 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def general_user_signed_in
+    if user_signed_in?
+      if current_user.role == 1
+        redirect_to "/"
+      end
+    end
+  end
+  def facility_user_signed_in
+    if user_signed_in?
+      if current_user.role == 2
+        redirect_to "/"
+      end
+    end
+  end
+  def manager_user_signed_in
+    if user_signed_in?
+      if current_user.role == 3
+        redirect_to "/"
+      end
+    end
+  end
+
+  def integer_string?(str)
+    Integer(str)
+    true
+  rescue ArgumentError
+    false
+  end
 
   protected
   def configure_permitted_parameters
