@@ -2,7 +2,18 @@
 @import "bootstrap";
 @import "font-awesome";
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
 body{
+
   margin-top: 50px;
 }
 
@@ -11,12 +22,17 @@ body{
 }
 
 .title-logo{
-  margin: 0px;
+  margin: 0px 10px;;
   position: fixed;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .sidebar-padding{
   padding-left: 200px;
+
 }
 
 .sidebar{
@@ -348,10 +364,16 @@ body{
   font-size: 15px;
 }
 
-.care-diary-title-name{
+.page-title{
+  margin-top: 70px;
   font-size: 50px;
-  width: 100%;
   text-align: center;
+  p {
+    margin: 0 auto;
+    min-width: 350px;
+    max-width: 500px;
+    box-shadow: 0px 10px 15px -10px;
+  }
 }
 
 .care-diary-date{
@@ -482,5 +504,139 @@ body{
     .notes{
       padding-top: 136px;
     }
+  }
+}
+
+.care-recipient-block1 {
+  margin-top: 150px;
+  border: solid 1px;
+  max-width: 880px;
+  padding:50px;
+  border-radius: 25px;
+  min-width: 250px;
+}
+
+.care_recipient_label {
+  font-size: 20px;
+}
+
+.care-recipient-block2 {
+  margin-top: 30px;
+  font-size: 20px;
+  input {
+    border-radius: 5px;
+    border: 1px solid;
+    text-align: center;
+    height: 35px;
+  }
+  select {
+    font-size: 20px;
+    height: 35px;
+  }
+  .name {
+    font-size: 30px;
+    width: 288px;
+    height: 50px;
+    margin-right: 40px;
+  }
+  .age {
+    width: 70px;
+    text-align: left;
+    margin-right: 30px;
+  }
+
+
+.care-recipient-block3 {
+  margin-top: 30px;
+  font-size: 20px;
+  input {
+    border-radius: 5px;
+    border: 1px solid;
+    text-align: center;
+    height: 35px;
+  }
+  .facility_in_charge{
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .care-recipient-block3{
+    display: table-caption;
+  }
+}
+
+  .sex {
+  width: 50px;
+  }
+  .degree_care_required {
+    margin-right: 20px;
+    width: 50px;
+  }
+  .dementia{
+    margin-right: 20px;
+    width: 60px;
+  }
+  .notes {
+    height: 200px;
+    width: 100%;
+  }
+}
+
+.care-recipient-index-block{
+  margin: 100px;
+  p {
+    margin: 0px;
+  }
+}
+
+.care-recipient-tbl {
+	border-collapse: collapse;
+  margin: 10vh auto 0;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+.care-recipient-tbl th, td {
+  min-width: 100px;
+  font-size: 2vw;
+	border: 1px solid white;
+  text-align: center;
+}
+.care-recipient-tbl tr:nth-child(2n+1) {
+	background: #FFF8E1;
+}
+.care-recipient-tbl tr:first-child, th:first-child {
+	background: #FF9800;
+  color: white;
+}
+
+.care-recipient-show-block1{
+  margin: 30px;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.care-recipient-show-block2 {
+  margin: 0px;
+  font-size: 0px;
+  p {
+    margin: 0px 30px 20px 0px;
+    font-size: 30px;
+    border-bottom: 2px solid;
+    border-color: #808080;
+    display: inline-block;
+  }
+}
+
+.care-recipient-show-block3 {
+  margin: 0px;
+  font-size: 0px;
+  p {
+    margin: 0px 30px 20px 0px;
+    font-size: 30px;
+    border-color: #808080;
+    display: inline-block;
   }
 }
