@@ -1,7 +1,7 @@
 5.times do |n|
   name = Faker::Name.name
   User.create!(
-    email: "test#{n + 1}@test.com",
+    email: "1test#{n + 1}@test.com",
     name: name,
     password: "password",
     password_confirmation: "password",
@@ -9,8 +9,30 @@
   )
 end
 
-User.where(role: 1).each do |user| #役職１ユーザーを全て取得して全ユーザーに対して同じ処理をする。
-  100.times do |n| #１００回同じ処理をする。
+5.times do |n|
+  name = Faker::Name.name
+  User.create!(
+    email: "2test#{n + 1}@test.com",
+    name: name,
+    password: "password",
+    password_confirmation: "password",
+    role: 2
+  )
+end
+
+5.times do |n|
+  name = Faker::Name.name
+  User.create!(
+    email: "3test#{n + 1}@test.com",
+    name: name,
+    password: "password",
+    password_confirmation: "password",
+    role: 3
+  )
+end
+
+User.where(role: 1).each do |user|
+  100.times do |n|
     temperature = [36.3, 36.4, 36.5, 36.6, 36.7, 36.8]
     date = Date.today - n
     meal_intake = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -47,6 +69,36 @@ User.where(role: 1).each do |user| #役職１ユーザーを全て取得して�
       lunch_meal_intake: meal_intake.sample,
       dinner_meal_intake: meal_intake.sample,
       name: name,
+      user_id: user_id
+    )
+  end
+end
+
+User.where(role: 2).each do |user|
+  100.times do |n|
+    name = Faker::Name.name
+    sex = [1, 2]
+    birthday = Faker::Date.between(from: '1921-01-01', to: '1941-01-01')
+    age = (Date.today.strftime('%Y%m%d').to_i - birthday.strftime('%Y%m%d').to_i) / 10000
+    facility_in_charge = ["ゆとり", "武豊福寿園", "ケアプラン老健", "ケアシス", "ゆめじろう", "ケアプラン榊原", "かくわ", "渡邉"]
+    manager_in_charge = Faker::Name.name
+    degree_care_required = [1, 2, 3, 4, 5]
+    dementia = [1, 2]
+    notes = ["日常動作は基本的に自立にて行われる、昔は料理が好きでよく作っていた。
+             家事の手伝いは好きなので、机拭き、食器の片付け、掃除等、できる範囲で役割を与えて欲しい。
+             他者と関わるのも好きで、社交的なので会話が弾むよう配慮して欲しい。"
+    ]
+    user_id = user.id
+    CareRecipient.create!(
+      name: name,
+      sex: sex.sample,
+      birthday: birthday,
+      age: age,
+      facility_in_charge: facility_in_charge.sample,
+      manager_in_charge: manager_in_charge,
+      degree_care_required: degree_care_required.sample,
+      dementia: dementia.sample,
+      notes: notes.sample,
       user_id: user_id
     )
   end
