@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_11_094810) do
+ActiveRecord::Schema.define(version: 2021_01_25_065824) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 2021_01_11_094810) do
     t.integer "dinner_meal_intake"
     t.string "name"
     t.index ["user_id"], name: "index_care_diaries_on_user_id"
+  end
+
+  create_table "care_recipients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "sex"
+    t.date "birthday"
+    t.integer "age"
+    t.string "facility_in_charge"
+    t.string "manager_in_charge"
+    t.integer "degree_care_required"
+    t.integer "dementia"
+    t.text "notes"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
