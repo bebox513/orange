@@ -33,7 +33,7 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'mini_magick', '~> 4.8'
 gem 'faker'
 # Use ActiveStorage variant
