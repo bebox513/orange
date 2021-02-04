@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'tops#show'
+  root to: 'tops#index'
 
   devise_for :users
-
 
   resources :users, :only => [:show] do
     resource :relationships, only: [:create, :destroy]
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
     get :followers, on: :member
   end
 
+  resources :tops, :only => [:index, :show]
   resources :messages, :only => [:create]
   resources :rooms, :only => [:new, :create, :show, :index]
   resources :care_diaries, :only => [:index, :show, :new, :create, :edit, :update]
