@@ -2,9 +2,9 @@
   <div class="mypage-block">
     <div class="mypage-avatar-block">
       <% if @user.avatar.attached? %>
-        <%= image_tag(@user.avatar_resize, class: "mypage-avatar") %>
+        <%= image_tag(@user.avatar_resize, class: "large-avatar") %>
       <% else %>
-        <%= fa_icon "user-circle", class: "avatar-none" %>
+      <i class="fas fa-user-circle large-avatar-none"></i>
       <% end %>
       <p class="mypage-name"><%= @user.name %></p>
       <% if current_user != @user %>
@@ -23,4 +23,11 @@
       <%=safe_join(@user.text.split("\n"),tag(:br))%>
     <% end %>
   </div>
+</div>
+<div class="mypage-contents">
+  <%= link_to "フォロー中一覧", user_path(params[:id], button: "following"), remote: true %>
+  <%= link_to "フォロワー一覧", user_path(params[:id], button: "follower"), remote: true %>
+  <%= link_to "投稿一覧", user_path(params[:id], button: "post"), remote: true %>
+</div>
+<div id="mypageChange">
 </div>
