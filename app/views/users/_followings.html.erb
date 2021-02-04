@@ -1,0 +1,17 @@
+<div class="follow">
+  <% @followings.each do |f| %>
+    <%= link_to user_path(f.id) do %>
+      <div class="block1">
+        <% if f.avatar.attached? %>
+          <%= image_tag(f.avatar_resize, class: "small-avatar") %>
+        <% else %>
+          <i class="fas fa-user-circle small-avatar-none"></i>
+        <% end %>
+        <p><%= f.name %></p>
+      </div>
+      <div class="block2">
+        <p><%= f.company %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
