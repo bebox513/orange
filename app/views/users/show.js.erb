@@ -1,0 +1,8 @@
+var button = "<%= @button %>";
+if ("following" == button) {
+  $('#mypageChange').html("<%= escape_javascript(render 'users/followings') %>");
+}else if("follower" == button){
+  $('#mypageChange').html("<%= escape_javascript(render 'users/followers') %>");
+}else if("post" == button){
+  $('#mypageChange').html("<%= escape_javascript(render 'users/posts') %>");
+}
