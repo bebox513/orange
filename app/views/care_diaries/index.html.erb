@@ -7,10 +7,10 @@
     <p><%= @cd_date.month %>月</p>
   </div>
   <%= link_to care_diaries_path(cd_back_date: @cd_date.last_month) do %>
-    <%= fa_icon "caret-left", class: "left-button" %>
+    <i class="fas fa-caret-left left-button"></i>
   <% end %>
   <%= link_to care_diaries_path(cd_next_date: @cd_date.next_month) do %>
-    <%= fa_icon "caret-right", class: "right-button" %>
+    <i class="fas fa-caret-right right-button"></i>
   <% end %>
   <div class="care-diary-block1">
     <% @care_diaries.each do |c| %>
