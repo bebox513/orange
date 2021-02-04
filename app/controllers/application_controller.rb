@@ -6,28 +6,6 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  def general_user_signed_in
-    if user_signed_in?
-      if current_user.role == 1
-        redirect_to "/"
-      end
-    end
-  end
-  def facility_user_signed_in
-    if user_signed_in?
-      if current_user.role == 2
-        redirect_to "/"
-      end
-    end
-  end
-  def manager_user_signed_in
-    if user_signed_in?
-      if current_user.role == 3
-        redirect_to "/"
-      end
-    end
-  end
-
   def integer_string?(str)
     Integer(str)
     true
@@ -37,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    added_attrs = [ :name, :email, :password, :password_confirmation, :avatar, :text, :role ]
+    added_attrs = [ :name, :email, :password, :password_confirmation, :avatar, :text, :role, :company ]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
