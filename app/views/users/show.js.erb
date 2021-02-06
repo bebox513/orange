@@ -1,8 +1,12 @@
 var button = "<%= @button %>";
 if ("following" == button) {
+  $('#followChange').html("<%= escape_javascript(render 'users/following') %>");
+}else if("unfollow" == button) {
+  $('#followChange').html("<%= escape_javascript(render 'users/unfollow') %>");
+}else if ("followings" == button) {
   $('#mypageChange').html("<%= escape_javascript(render 'users/followings') %>");
-}else if("follower" == button){
+}else if("followers" == button){
   $('#mypageChange').html("<%= escape_javascript(render 'users/followers') %>");
-}else if("post" == button){
+}else if("posts" == button){
   $('#mypageChange').html("<%= escape_javascript(render 'users/posts') %>");
 }

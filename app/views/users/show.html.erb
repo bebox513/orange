@@ -1,33 +1,32 @@
 <div class="mypage">
-  <div class="mypage-block">
-    <div class="mypage-avatar-block">
-      <% if @user.avatar.attached? %>
-        <%= image_tag(@user.avatar_resize, class: "large-avatar") %>
-      <% else %>
-      <i class="fas fa-user-circle large-avatar-none"></i>
-      <% end %>
-      <p class="mypage-name"><%= @user.name %></p>
+    <% if @user.avatar.attached? %>
+      <%= image_tag(@user.avatar_resize, class: "large-avatar") %>
+    <% else %>
+    <i class="fas fa-user-circle large-avatar-none"></i>
+    <% end %>
+    <p class="company"><%= @user.company %></p>
+    <p class="name"><%= @user.name %></p>
+    <div id="followChange">
       <% if current_user != @user %>
         <% if @user.followed_by?(current_user) %>
-          <p class="follow-btn"><%=link_to "フォロー済み", user_relationships_path(@user.id), method: :delete %></p>
+          <p class="follow-btn"><%=link_to "フォロー済み", user_relationships_path(@user.id, button: "unfollow"), remote: true, method: :delete %></p>
         <% else %>
-          <p class="follow-btn"><%=link_to "フォローする", user_relationships_path(@user.id), method: :post %></p>
+          <p class="follow-btn"><%=link_to "フォローする", user_relationships_path(@user.id, button: "following"), remote: true, method: :post %></p>
         <% end %>
       <% else %>
         <p class="mypage-edit-btn"><%= link_to "プロフィール編集", edit_user_registration_path(params[:id]) %></p>
       <% end %>
     </div>
-  </div>
-  <div class="mypage-text">
+  <div class="text">
     <% if @user.text.present? %>
       <%=safe_join(@user.text.split("\n"),tag(:br))%>
     <% end %>
   </div>
 </div>
 <div class="mypage-contents">
-  <%= link_to "フォロー中一覧", user_path(params[:id], button: "following"), remote: true %>
-  <%= link_to "フォロワー一覧", user_path(params[:id], button: "follower"), remote: true %>
-  <%= link_to "投稿一覧", user_path(params[:id], button: "post"), remote: true %>
+  <%= link_to "フォロー中一覧", user_path(params[:id], button: "followings"), remote: true %>
+  <%= link_to "フォロワー一覧", user_path(params[:id], button: "followers"), remote: true %>
+  <%= link_to "投稿一覧", user_path(params[:id], button: "posts"), remote: true %>
 </div>
 <div id="mypageChange">
 </div>
