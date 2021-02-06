@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root to: 'tops#index'
 
-  devise_for :users
-
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations'
+   }
+   
   resources :users, :only => [:show] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member
