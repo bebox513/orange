@@ -9,15 +9,15 @@
         <p class="sidebar-name"><%= current_user.name %></p>
       <% end %>
     <% end %>
-  <ul class="channel_list">
+  <ul class="sidebar-contents">
     <% if user_signed_in? %>
       <div data-turbolinks="false">
-      <%= link_to "メッセージ作成", new_room_path %>
+        <p><%= link_to "メッセージ作成", new_room_path %></p>
       <% if current_user.role == 1 %>
-        <%= link_to "介護日誌", care_diaries_path %>
+        <p><%= link_to "介護日誌", care_diaries_path %></p>
       <% end %>
       <% if current_user.role == 2 || current_user.role == 3 %>
-        <%= link_to "利用者一覧", care_recipients_path %>
+        <p><%= link_to "利用者一覧", care_recipients_path %></p>
       <% end %>
       </div>
     <% end %>
