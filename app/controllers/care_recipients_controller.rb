@@ -1,5 +1,4 @@
 class CareRecipientsController < ApplicationController
-  before_action :general_user_signed_in
 
   def index
     @care_recipients = current_user.care_recipients.all
