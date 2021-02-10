@@ -23,7 +23,7 @@ body{
 }
 
 .title-logo{
-  margin: 0px 10px;;
+  margin: 0px 10px;
   position: fixed;
   a {
     color: white;
@@ -116,6 +116,106 @@ body{
   }
 }
 
+
+
+.post-block{
+  width: 600px;
+  min-height: 70px;
+  margin: 0 auto;
+  padding: 30px 0 40px 65px;
+  background-color: #FFF8E1;
+  border: 1px solid;
+  border-bottom: none;
+  border-color: #FF9800;
+  position: relative;
+  .avatar {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+  }
+  .link-block {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    position: absolute;
+  }
+  .like-button {
+    min-width: 1px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0px;
+    left: 60px;
+    p {
+      display: inline-block;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #333333;
+  }
+  div {
+    display: inline-block;
+    width: 100%;
+    min-height: 30px;
+    p {
+      font-size: 15px;
+      margin: 0;
+    }
+    i {
+      font-size: 20px;
+      color: #FF9800;
+    }
+    .name {
+      z-index: 2;
+      position: absolute;
+      font-size: 20px;
+      top: 0px;
+    }
+  }
+}
+
+.post-show-block {
+  min-height: 1px;
+  width: 600px;
+  margin: 200px auto 0;
+}
+
+.comment-form {
+  width: 600px;
+  height: 120px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-color: #FF9800;
+  background-color: #FFF8E1;
+  padding: 10px;
+  position: relative;
+  div {
+    height: 100px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 3px;
+  }
+  textarea {
+    width: 100%;
+    height: 80px;
+    outline: none;
+    border: none;
+    resize: none;
+  }
+  button {
+    background-color: transparent;
+    position: absolute;
+    top: 88px;
+    left: 560px;
+    i {
+      color: #FF9800;
+
+    }
+  }
+}
 
 
 
@@ -332,7 +432,6 @@ body{
 }
 
 #file{
-  display: none;
 }
 
 .edit-form{
@@ -489,7 +588,7 @@ body{
 }
 
 .page-title{
-  margin-top: 70px;
+  margin: 70px 0 70px 0;
   font-size: 50px;
   text-align: center;
   p {
@@ -768,5 +867,32 @@ body{
     font-size: 30px;
     border-color: #808080;
     display: inline-block;
+  }
+}
+
+.post-new-block {
+  width: 600px;
+  margin: 0 auto;
+  textarea {
+    border-radius: 5px;
+    margin-top: 30px;
+    border: 2px solid;
+    height: 145px;
+    width: 540px;
+    outline: none;
+    resize: none;
+  }
+  input {
+    padding: 2px;
+    color: white;
+    background-color: #FF9800;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 15px;
+    &:hover{
+      text-decoration: none;
+      color: white;
+    }
   }
 }
