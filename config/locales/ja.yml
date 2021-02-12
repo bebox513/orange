@@ -1,6 +1,10 @@
 ja:
   activerecord:
     attributes:
+      comment:
+        content: コメント内容
+      post:
+        content: 投稿内容
       care_recipient:
         name: 名前
         sex: 性別
