@@ -1,0 +1,19 @@
+<% if @comments.present? %>
+  <% @comments.each do |comment| %>
+    <div class="post-block">
+      <%= link_to user_path(comment.user.id) do %>
+        <% if @post.user.avatar.attached? %>
+          <%= image_tag(comment.user.avatar_resize, class: "small-avatar avatar") %>
+        <% else %>
+          <i class="fas fa-user-circle small-avatar-none avatar"></i>
+        <% end %>
+      <% end %>
+      <div>
+        <%= link_to user_path(comment.user.id) do %>
+          <p class="name"><%= comment.user.name %></p>
+        <% end %>
+        <p><%=safe_join(comment.content.split("\n"),tag(:br))%></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
