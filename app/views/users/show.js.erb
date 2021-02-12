@@ -8,5 +8,5 @@ if ("following" == button) {
 }else if("followers" == button){
   $('#mypageChange').html("<%= escape_javascript(render 'users/followers') %>");
 }else if("posts" == button){
-  $('#mypageChange').html("<%= escape_javascript(render 'users/posts') %>");
+  $('#mypageChange').html("<%= escape_javascript(render 'posts/posts') %>");
 }
