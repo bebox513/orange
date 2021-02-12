@@ -1,0 +1,10 @@
+<div class="page-title">
+  <p>投稿作成</p>
+</div>
+<div class="post-new-block">
+  <%= form_for @post do |f| %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit "作成する" %>
+  <% end %>
+</div>

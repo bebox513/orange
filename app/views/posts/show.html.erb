@@ -1,0 +1,35 @@
+<div class="post-show-block">
+  <div class="post-block">
+    <%= link_to user_path(@post.user.id) do %>
+      <% if @post.user.avatar.attached? %>
+        <%= image_tag(@post.user.avatar_resize, class: "small-avatar avatar") %>
+      <% else %>
+        <i class="fas fa-user-circle small-avatar-none avatar"></i>
+      <% end %>
+    <% end %>
+    <div>
+      <%= link_to user_path(@post.user.id) do %>
+        <p class="name"><%= @post.user.name %></p>
+      <% end %>
+      <p><%=safe_join(@post.content.split("\n"),tag(:br))%></p>
+    </div>
+    <div id="like-button-<%= @post.id %>" class="like-button">
+      <%= render partial: 'likes/like', locals: { post: @post } %>
+    </div>
+  </div>
+</div>
+<div class="comment-form">
+  <%= form_for(@comment, remote: true) do |f| %>
+    <div class="">
+      <%= f.text_area :content %>
+    </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+      <%= f.button :type => "submit", style: 'border-style: none;' do %>
+        <i class="fas fa-paper-plane"></i>
+      <% end %>
+  <% end %>
+</div>
+<div id="comment-inde">
+  <%= render partial: 'comments/index', locals: { commets: @commnets } %>
+</div>
