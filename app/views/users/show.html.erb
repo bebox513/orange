@@ -2,7 +2,7 @@
     <% if @user.avatar.attached? %>
       <%= image_tag(@user.avatar_resize, class: "large-avatar") %>
     <% else %>
-    <i class="fas fa-user-circle large-avatar-none"></i>
+      <i class="fas fa-user-circle large-avatar-none"></i>
     <% end %>
     <p class="company"><%= @user.company %></p>
     <p class="name"><%= @user.name %></p>
