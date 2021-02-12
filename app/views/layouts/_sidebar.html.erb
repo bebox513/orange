@@ -13,6 +13,7 @@
     <% if user_signed_in? %>
       <div data-turbolinks="false">
         <p><%= link_to "メッセージ作成", new_room_path %></p>
+        <p><%= link_to "投稿作成", new_post_path %></p>
       <% if current_user.role == 1 %>
         <p><%= link_to "介護日誌", care_diaries_path %></p>
       <% end %>
