@@ -61,6 +61,99 @@ body{
 }
 
 
+.search-switch {
+  width: 600px;
+  font-size: 0px;
+  margin: 0 auto;
+  div {
+    width: 201px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-color: #FF9800;
+    #post-button {
+      background-color: #FF9800
+    }
+    p {
+      text-align: center;
+      display: inline-block;
+      width: 100px;
+      height: 30px;
+      margin: 0px;
+      font-size: 15px;
+      border-right: 1px solid;
+      border-color: #FF9800;
+      background-color: #FFF8E1;
+      a {
+        color: #333333;
+        &:hover{
+          text-decoration: none;
+          color: #333333;
+        }
+      }
+    }
+  }
+}
+
+.search {
+  border: solid 1px;
+  border-color: #FF9800;
+  background-color: #FFF8E1;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  div {
+    border-radius: 7px;
+    background-color: white;
+    width: 550px;
+    height: 27px;
+    input {
+      border-color: transparent;
+      width: 500px;
+      outline: none;
+      border: none;
+      resize: none;
+    }
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      width: 70px;
+      height: 25px;
+      position: absolute;
+      padding: 0px;
+    }
+  }
+}
+
+.search-index-block {
+  border: 1px solid;
+  border-color: #FF9800;
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FFF8E1;
+  div {
+    border-bottom: 1px solid;
+    border-color: #FF9800;
+    position: relative;
+  }
+  p {
+    color: #333333;
+    margin: 0;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+  }
+  .company {
+    left: 260px;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 .sidebar-padding{
@@ -212,7 +305,6 @@ body{
     left: 560px;
     i {
       color: #FF9800;
-
     }
   }
 }
