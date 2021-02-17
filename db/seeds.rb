@@ -1,34 +1,27 @@
-5.times do |n|
+6.times do |n|
   name = Faker::Name.name
   User.create!(
     email: "1test#{n + 1}@test.com",
     name: name,
     password: "password",
     password_confirmation: "password",
-    role: 1
+    role: 1,
   )
 end
 
-5.times do |n|
-  name = Faker::Name.name
-  User.create!(
-    email: "2test#{n + 1}@test.com",
-    name: name,
-    password: "password",
-    password_confirmation: "password",
-    role: 2
-  )
-end
-
-5.times do |n|
-  name = Faker::Name.name
-  User.create!(
-    email: "3test#{n + 1}@test.com",
-    name: name,
-    password: "password",
-    password_confirmation: "password",
-    role: 3
-  )
+2.times do |i|
+  6.times do |n|
+    company = ["武豊福寿園", "くすのきの里", "医療法人かくわ会", "瑞光の里", "むらさき野苑" ]
+    name = Faker::Name.name
+    User.create!(
+      email: "#{i + 2}test#{n + 1}@test.com",
+      name: name,
+      password: "password",
+      password_confirmation: "password",
+      role: i + 2,
+      company: company.sample
+    )
+  end
 end
 
 User.where(role: 1).each do |user|
@@ -101,5 +94,89 @@ User.where(role: 2).each do |user|
       notes: notes.sample,
       user_id: user_id
     )
+  end
+end
+
+User.ids.each do |follower_user_id|
+  User.ids.shuffle.each do |following_user_id|
+    if follower_user_id != following_user_id && rand(4) == 0
+      Relationship.create!(
+        follower_id: follower_user_id,
+        following_id: following_user_id
+      )
+    end
+  end
+end
+
+20.times do |n|
+  User.all.shuffle.each do |user|
+    if rand(2) + 1 == 1
+      content1 = [
+        "今日も介護疲れたけどよく頑張った！！ご褒美にケーキ買おう♪",
+        "うどん久しぶりに食べたけどすっごい美味しかった！！",
+        "最近息子が介護を手伝ってくれることが増えてとても助かる！！
+        お父さんが強く言ってくれたからだね！",
+        "スーパーで最近売り始めた卵がすごい安い！！",
+        "今日とっても寒くて驚いちゃった、、、
+        毛布を増やそう！！",
+      ]
+      content2 = [
+        "かるた大会を施設で行いました。とても盛り上がり、
+        勝負も白熱しました！！優勝者には施設長から賞状が贈られております。
+        毎月行っておりますので、次回の参加希望もお待ちしております！！",
+        "いつも掃除を手伝ってくださる方に、施設からお礼のプレゼントをさせていただきました。
+        とても喜んでくださり、「また頑張るね」とおっしゃってくださりました。",
+        "おやつの時間に皆さんで手作りホットケーキを食べました！！
+        抹茶味、チョコレート味と、沢山のホットケーキを作り、美味しくいただきました。
+        少し焦がしてしまうこともありましたが、皆さん楽しそうに過ごされています。"
+      ]
+      if user.role == 1
+        content = content1
+      else
+        content = content2
+      end
+      Post.create!(
+        user_id: user.id,
+        content: content.sample
+      )
+    end
+  end
+end
+
+Post.all.each do |post|
+  User.ids.shuffle.each do |user_id|
+    if post.user_id != user_id && rand(4) == 0
+      Like.create!(
+        user_id: user_id,
+        post_id: post.id
+      )
+    end
+  end
+end
+
+Post.all.each do |post|
+  User.ids.each do |user_id|
+    content1 = ["とっても素敵ですね！",
+                "それはいいと思います。",
+                "素晴らしい！！"
+    ]
+    content2 = ["いつもいつもありがとうございます",
+                "とっっても素敵ですね",
+                "行事楽しそうでなによりです！",
+                "楽しそう！",
+                "またよろしくおねがいします！"
+    ]
+    if post.user_id != user_id && rand(4) == 0
+      if post.user.role == 1
+        content = content1
+      else
+        content = content2
+      end
+      Comment.create!(
+        post_id: post.id,
+        user_id: user_id,
+        content: content.sample
+      )
+    end
   end
 end
