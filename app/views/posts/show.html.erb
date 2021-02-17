@@ -18,18 +18,20 @@
     </div>
   </div>
 </div>
-<div class="comment-form">
-  <%= form_for(@comment, remote: true) do |f| %>
-    <div class="">
-      <%= f.text_area :content %>
-    </div>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :post_id, :value => @post.id %>
-      <%= f.button :type => "submit", style: 'border-style: none;' do %>
-        <i class="fas fa-paper-plane"></i>
-      <% end %>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <div class="comment-form">
+    <%= form_for(@comment, remote: true) do |f| %>
+      <div class="">
+        <%= f.text_area :content %>
+      </div>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :post_id, :value => @post.id %>
+        <%= f.button :type => "submit", style: 'border-style: none;' do %>
+          <i class="fas fa-paper-plane"></i>
+        <% end %>
+    <% end %>
+  </div>
+<% end %>
 <div id="comment-inde">
   <%= render partial: 'comments/index', locals: { commets: @commnets } %>
 </div>
