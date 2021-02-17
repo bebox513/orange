@@ -7,6 +7,10 @@
         <i class="fas fa-user-circle small-avatar-none avatar"></i>
       <% end %>
     <% end %>
+    <%= link_to post_path(post.id) do %>
+      <div class="link-block">
+      </div>
+    <% end %>
     <div>
       <%= link_to user_path(post.user.id) do %>
         <p class="name"><%= post.user.name %></p>
@@ -16,6 +20,5 @@
     <div id="like-button-<%= post.id %>" class="like-button">
       <%= render partial: 'likes/like', locals: { post: post } %>
     </div>
-    <%= link_to "コメントを表示" %>
   </div>
 <% end %>
