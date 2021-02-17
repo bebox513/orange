@@ -6,12 +6,14 @@ Rails.application.routes.draw do
    }
 
   resources :users, :only => [:show] do
+    get :search, on: :collection
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member
     get :followers, on: :member
   end
 
   resources :posts, :only => [:show, :new, :create] do
+    get :search, on: :collection
     resource :likes, only: [:create, :destroy]
     resource :comments, only: [:create, :destroy]
   end
