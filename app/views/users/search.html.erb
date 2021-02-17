@@ -1,0 +1,26 @@
+<div class="page-title">
+  <p>検索結果</p>
+</div>
+<div class="search">
+  <%= form_with url: search_users_path, method: :get, local: true do |f| %>
+    <div>
+      <%= f.text_field :name %>
+      <%= f.submit "検索する", class: "btn" %>
+    </div>
+  <% end %>
+</div>
+<div class="search-index-block">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+      <div>
+        <% if user.avatar.attached? %>
+          <%= image_tag(user.avatar_resize, class: "small-avatar") %>
+        <% else %>
+          <i class="fas fa-user-circle small-avatar-none"></i>
+        <% end %>
+        <p class="name"><%= user.name %></p>
+        <p class="company"><%= user.company %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
