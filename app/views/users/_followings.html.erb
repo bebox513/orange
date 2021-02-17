@@ -14,11 +14,13 @@
       </div>
     <% end %>
     <div id="followChange">
-      <% if current_user != f %>
-        <% if f.followed_by?(current_user) %>
-          <p class="follow-btn"><%=link_to "フォロー済み", user_relationships_path(f.id, button: "unfollow"), remote: true, method: :delete %></p>
-        <% else %>
-          <p class="follow-btn"><%=link_to "フォローする", user_relationships_path(f.id, button: "following"), remote: true, method: :post %></p>
+      <% if user_signed_in? %>
+        <% if current_user != f %>
+          <% if f.followed_by?(current_user) %>
+            <p class="follow-btn"><%=link_to "フォロー済み", user_relationships_path(f.id, button: "unfollow"), remote: true, method: :delete %></p>
+          <% else %>
+            <p class="follow-btn"><%=link_to "フォローする", user_relationships_path(f.id, button: "following"), remote: true, method: :post %></p>
+          <% end %>
         <% end %>
       <% end %>
     </div>
