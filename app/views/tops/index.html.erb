@@ -1,27 +1,13 @@
 <div class="page-title">
   <p>最新の投稿</p>
 </div>
-<% @posts.each do |post| %>
-  <div class="post-block">
-    <%= link_to user_path(post.user.id) do %>
-      <% if post.user.avatar.attached? %>
-        <%= image_tag(post.user.avatar_resize, class: "small-avatar avatar") %>
-      <% else %>
-        <i class="fas fa-user-circle small-avatar-none avatar"></i>
-      <% end %>
-    <% end %>
-    <%= link_to post_path(post.id) do %>
-      <div class="link-block">
-      </div>
-    <% end %>
-    <div>
-      <%= link_to user_path(post.user.id) do %>
-        <p class="name"><%= post.user.name %></p>
-      <% end %>
-      <p><%=safe_join(post.content.split("\n"),tag(:br))%></p>
-    </div>
-    <div id="like-button-<%= post.id %>" class="like-button">
-      <%= render partial: 'likes/like', locals: { post: post } %>
-    </div>
+<div class="search-switch">
+  <div>
+    <p id="post-button"><%= link_to "投稿検索", tops_path(button: "post"), remote: true %></p>
+    <p id="user-button"><%= link_to "ユーザー検索", tops_path(button: "user"), remote: true %></p>
   </div>
-<% end %>
+</div>
+<div id="search">
+  <%= render 'posts/search' %>
+</div>
+<%= render 'posts/posts' %>
