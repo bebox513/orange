@@ -22,6 +22,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    if params[:content].present?
+      @posts = Post.where('content LIKE ?', "%#{params[:content]}%")
+    else
+      @posts = Post.none
+    end    
+  end
+
   def post_params
     params.require(:post).permit(:content, :user_id)
   end
