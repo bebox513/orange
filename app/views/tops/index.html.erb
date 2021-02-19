@@ -3,11 +3,14 @@
 </div>
 <div class="search-switch">
   <div>
-    <p id="post-button"><%= link_to "投稿検索", tops_path(button: "post"), remote: true %></p>
-    <p id="user-button"><%= link_to "ユーザー検索", tops_path(button: "user"), remote: true %></p>
+    <p id="post-button"><%= link_to "投稿検索", tops_path(type: "post"), remote: true %></p>
+    <p id="user-button"><%= link_to "ユーザー検索", tops_path(type: "user"), remote: true %></p>
   </div>
 </div>
 <div id="search">
   <%= render 'posts/search' %>
 </div>
-<%= render 'posts/posts' %>
+<div id="postList">
+  <%= render 'posts/posts' %>
+  <%= link_to_next_page @posts, 'もっと見る', id: "morePost", params: { type: :posts }, remote: true %>
+</div>

@@ -1,0 +1,3 @@
+$('#morePost').remove();
+$('#postList').append("<%= escape_javascript(render partial: 'posts/posts') %>");
+$('#postList').append("<%= escape_javascript(link_to_next_page(@posts, 'もっと見る', id: 'morePost', params: { type: :posts }, remote: true)) %>");

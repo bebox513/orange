@@ -10,9 +10,9 @@
       <% if user_signed_in? %>
         <% if current_user != @user %>
           <% if @user.followed_by?(current_user) %>
-            <p class="follow-btn"><%=link_to "フォロー済み", user_relationships_path(@user.id, button: "unfollow"), remote: true, method: :delete %></p>
+            <p class="follow-btn"><%=link_to "フォロー済み", user_relationships_path(@user.id, type: "unfollow"), remote: true, method: :delete %></p>
           <% else %>
-            <p class="follow-btn"><%=link_to "フォローする", user_relationships_path(@user.id, button: "following"), remote: true, method: :post %></p>
+            <p class="follow-btn"><%=link_to "フォローする", user_relationships_path(@user.id, type: "following"), remote: true, method: :post %></p>
           <% end %>
         <% else %>
           <p class="mypage-edit-btn"><%= link_to "プロフィール編集", edit_user_registration_path(params[:id]) %></p>
@@ -26,9 +26,9 @@
   </div>
 </div>
 <div class="mypage-contents">
-  <%= link_to "フォロー中一覧", user_path(params[:id], button: "followings"), remote: true %>
-  <%= link_to "フォロワー一覧", user_path(params[:id], button: "followers"), remote: true %>
-  <%= link_to "投稿一覧", user_path(params[:id], button: "posts"), remote: true %>
+  <%= link_to "フォロー中一覧", user_path(params[:id], type: "followings"), remote: true %>
+  <%= link_to "フォロワー一覧", user_path(params[:id], type: "followers"), remote: true %>
+  <%= link_to "投稿一覧", user_path(params[:id], type: "posts"), remote: true %>
 </div>
 <div id="mypageChange">
 </div>
