@@ -36,6 +36,7 @@ gem 'rails-i18n'
 gem 'font-awesome-sass'
 gem 'mini_magick', '~> 4.8'
 gem 'faker'
+gem 'kaminari'
 # Use ActiveStorage variant
 
 # Use Capistrano for deployment
