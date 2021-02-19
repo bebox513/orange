@@ -12,5 +12,7 @@
 </div>
 <div id="postList">
   <%= render 'posts/posts' %>
-  <%= link_to_next_page @posts, 'もっと見る', id: "morePost", params: { type: :posts }, remote: true %>
+</div>
+<div id="morePostBlock">
+  <%= link_to_next_page @posts, 'もっと見る', id: 'morePost', params: { type: :posts }, remote: true %>
 </div>

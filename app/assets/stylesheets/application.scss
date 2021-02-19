@@ -453,6 +453,22 @@ body{
   }
 }
 
+#morePostBlock {
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 70px;
+  text-align: center;
+  a {
+    background-color: #FF9800;
+    color: white;
+    font-size: 15px;
+    padding: 10px 30px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+}
+
 .mypage-contents{
   height: 50px;
   background-color: #FFF8E1;
