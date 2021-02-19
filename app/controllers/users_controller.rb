@@ -4,7 +4,15 @@ class UsersController < ApplicationController
     @followers = @user.followers
     @followings = @user.followings
     @posts = @user.posts.order(id: "DESC")
-    @button = params[:button]
+
+    return unless request.xhr?
+
+    case params[:type]
+    when 'followings', 'followers', 'posts'
+      render "users/#{params[:type]}"
+    when 'following', 'unfollow'
+      render "relationships/#{params[:type]}"
+    end
   end
 
   def search
