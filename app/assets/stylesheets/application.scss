@@ -209,6 +209,13 @@ body{
   }
 }
 
+.post-show-block {
+  border-top: 1px solid;
+  border-color: #FF9800;
+  min-height: 1px;
+  width: 600px;
+  margin: 200px auto 0;
+}
 
 
 .post-block{
@@ -218,7 +225,7 @@ body{
   padding: 30px 0 40px 65px;
   background-color: #FFF8E1;
   border: 1px solid;
-  border-bottom: none;
+  border-top: none;
   border-color: #FF9800;
   position: relative;
   .avatar {
@@ -268,12 +275,6 @@ body{
       top: 0px;
     }
   }
-}
-
-.post-show-block {
-  min-height: 1px;
-  width: 600px;
-  margin: 200px auto 0;
 }
 
 .comment-form {
