@@ -1,0 +1,14 @@
+<table class="care-recipient-tbl">
+  <tr><th></th><th>名前</th><th class="sex">性別</th><th>事業所</th><th>ケアマネ</th><th>要介護度</th></tr>
+  <% @care_recipients.each.with_index(1) do |cr,i| %>
+    <tr>
+      <th><%= link_to "#{i}", care_recipient_path(cr.id),class: "white" %></th>
+      <td><%= link_to "#{cr.name}", care_recipient_path(cr.id) %></td>
+      <td><%= link_to "#{cr.sex}", care_recipient_path(cr.id) %></td>
+      <td><%= link_to "#{cr.facility_in_charge}", care_recipient_path(cr.id) %></td>
+      <td><%= link_to "#{cr.manager_in_charge}", care_recipient_path(cr.id) %></td>
+      <td><%= link_to "#{cr.degree_care_required}", care_recipient_path(cr.id) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "利用者作成", new_care_recipient_path %>

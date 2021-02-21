@@ -323,6 +323,7 @@ body{
 
 
 
+
 .sign-in-block{
   margin-top: 150px;
   text-align: center;
@@ -466,6 +467,7 @@ body{
     padding: 10px 30px;
     margin: 0 auto;
     border-radius: 5px;
+    text-decoration: none;
   }
 }
 
@@ -878,25 +880,23 @@ body{
     text-align: left;
     margin-right: 30px;
   }
-
-.care-recipient-block3 {
-  font-size: 20px;
-  input {
-    border-radius: 5px;
-    border: 1px solid;
-    text-align: center;
-    height: 35px;
+  .care-recipient-block3 {
+    font-size: 20px;
+    input {
+      border-radius: 5px;
+      border: 1px solid;
+      text-align: center;
+      height: 35px;
+    }
+    .facility-in-charge{
+      margin-right: 20px;
+    }
   }
-  .facility-in-charge{
-    margin-right: 20px;
+  @media screen and (max-width: 1080px) {
+    .care-recipient-block3{
+      display: table-caption;
+    }
   }
-}
-@media screen and (max-width: 1080px) {
-  .care-recipient-block3{
-    display: table-caption;
-  }
-}
-
   .sex {
   width: 50px;
   }
@@ -914,16 +914,36 @@ body{
   }
 }
 
-.care-recipient-index-block{
-  margin: 100px;
-  p {
-    margin: 0px;
+.care-recipient-search {
+  font-size: 1vw;
+  text-align: center;
+  width: 700px;
+  height: 100px;
+  margin: 0 auto;
+  .form {
+    height: 2vw;
+    width: 35vw;
+    margin-right: 20px;
+  }
+  .btn {
+    font-size: 1vw;
+    background-color: #FF9800;
+    color: white;
+    min-width: 70px;
+    min-height: 25px;
+    position: absolute;
+    padding: 0px;
   }
 }
 
+
+
+
+
+
 .care-recipient-tbl {
 	border-collapse: collapse;
-  margin: 10vh auto 0;
+  margin: 0 auto;
   a {
     display: block;
     width: 100%;

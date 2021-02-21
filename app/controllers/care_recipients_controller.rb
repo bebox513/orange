@@ -34,6 +34,14 @@ class CareRecipientsController < ApplicationController
     end
   end
 
+  def search
+    if params[:name].present?
+      @care_recipients = CareRecipient.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @care_recipients = CareRecipient.none
+    end
+  end
+
   private
   def care_recipient_params
     params.require(:care_recipient).permit(

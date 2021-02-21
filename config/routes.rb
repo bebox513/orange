@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resource :comments, only: [:create, :destroy]
   end
 
+  resources :care_recipients, :only => [:index, :show, :new, :create, :edit, :update] do
+    get :search, on: :collection
+  end
+  
   resources :comments, :only => [:new, :create, :destroy]
   resources :tops, :only => [:index, :show]
   resources :messages, :only => [:create]
