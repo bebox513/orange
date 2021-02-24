@@ -538,12 +538,28 @@ body{
   }
 }
 
-#img_field{
-  width: 190px;
+.file-form {
+  cursor: pointer;
 }
 
-#file{
+#img-field{
+  width: 184px;
+  height: 190px;
+  padding: 0px;
 }
+
+#image_preview {
+  img {
+    border-radius: 95px;
+    height: 190px;
+    width: 190px;
+  }
+}
+
+
+
+
+
 
 .edit-form{
   width: 280px;
