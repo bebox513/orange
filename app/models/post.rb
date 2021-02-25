@@ -8,4 +8,11 @@ class Post < ApplicationRecord
 
   has_many :comments
   has_many :comment_posts, through: :comments, source: :user
+
+  has_one_attached :img
+
+  def img_resize
+    return self.img.variant(combine_options:{gravity: :center, resize:"468x350^", crop:"468x350+0+0"}).processed
+  end
+
 end

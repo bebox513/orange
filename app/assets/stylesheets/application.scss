@@ -234,6 +234,18 @@ body{
     left: 5px;
     z-index: 2;
   }
+  .post-img {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #808080;
+    width: 476px;
+    height: 358px;
+    padding: 3px;
+    background-color: white;
+    img {
+      border-radius: 5px;
+    }
+  }
   .link-block {
     height: 100%;
     width: 100%;
@@ -276,6 +288,7 @@ body{
     }
   }
 }
+
 
 .comment-form {
   width: 600px;
@@ -1016,7 +1029,14 @@ body{
 }
 
 .post-new-block {
-  width: 600px;
+  border: 2px solid;
+  border-radius: 20px;
+  border-color: #FF9800;
+  background-color: #FFF8E1;
+  padding: 55px;
+  text-align: center;
+  width: 690px;
+  height: 400px;
   margin: 0 auto;
   textarea {
     border-radius: 5px;

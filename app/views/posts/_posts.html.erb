@@ -1,5 +1,10 @@
 <% @posts.each do |post| %>
   <div class="post-block">
+    <% if post.img.attached? %>
+      <div class="post-img">
+        <%= image_tag(post.img_resize) %>
+      </div>
+    <% end %>
     <%= link_to user_path(post.user.id) do %>
       <% if post.user.avatar.attached? %>
         <%= image_tag(post.user.avatar_resize, class: "small-avatar avatar") %>
