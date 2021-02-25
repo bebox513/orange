@@ -19,7 +19,7 @@
 //= require_tree .
 
 $(document).on("turbolinks:load", function () {
-  $("#user_avatar").on("change", function (e) {
+  $("#user_avatar, #post_img").on("change", function (e) {
     var files = e.target.files;
     var d = new $.Deferred().resolve();
     $.each(files, function (i, file) {
@@ -34,8 +34,8 @@ $(document).on("turbolinks:load", function () {
     var img = new Image();
     var def = $.Deferred();
     reader.onload = function (e) {
-      $("#image_preview").empty();
-      $("#image_preview").append(img);
+      $("#avatar_preview, #img_preview").empty();
+      $("#avatar_preview, #img_preview").append(img);
       img.src = e.target.result;
       def.resolve(img);
     };

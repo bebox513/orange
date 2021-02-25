@@ -3,7 +3,12 @@
 </div>
 <div class="post-new-block">
   <%= form_for @post do |f| %>
-    <%= f.file_field :img %>
+    <%= f.label :img, class: "file-form" do %>
+      <div id="img_preview">
+        <i class="fas fa-image"></i>
+      </div>
+      <%= f.file_field :img, style: 'display:none' %>
+    <% end %>
     <%= f.text_area :content %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit "作成する" %>

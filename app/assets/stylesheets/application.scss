@@ -561,7 +561,7 @@ body{
   padding: 0px;
 }
 
-#image_preview {
+#avatar_preview {
   img {
     border-radius: 95px;
     height: 190px;
@@ -1035,15 +1035,14 @@ body{
   background-color: #FFF8E1;
   padding: 55px;
   text-align: center;
-  width: 690px;
-  height: 400px;
+  width: 600px;
+  height: 700px;
   margin: 0 auto;
   textarea {
     border-radius: 5px;
-    margin-top: 30px;
-    border: 2px solid;
+    border: 1px solid;
     height: 145px;
-    width: 540px;
+    width: 468px;
     outline: none;
     resize: none;
   }
@@ -1059,5 +1058,24 @@ body{
       text-decoration: none;
       color: white;
     }
+  }
+}
+
+#img_preview {
+  height: 350px;
+  width: 467px;
+  border-radius: 44px;
+  background-color: #FF9800;
+  position: relative;
+  i {
+    font-size: 468px;
+    position: absolute;
+    top: -58px;
+    left: 0px;
+    color: white;
+  }
+  img {
+    width: 468px;
+    height: 350px;
   }
 }
