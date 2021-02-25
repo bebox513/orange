@@ -1,6 +1,6 @@
 class TopsController < ApplicationController
   def index
-    @posts = Post.page(params[:page]).per(10)
+    @posts = Post.page(params[:page]).order(id: "DESC").per(10)
 
     return unless request.xhr?
 
