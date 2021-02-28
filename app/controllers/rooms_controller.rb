@@ -6,15 +6,20 @@ class RoomsController < ApplicationController
   end
 
   def new
+    @matchers = current_user.followers & current_user.followings
     @room = Room.new
+    @entry = Entry.new
   end
 
   def create
-    @room = Room.create(room_params)
-    @user = User.find_by(name: @room.name)
-    @entry1 = Entry.create(user_id: current_user.id, room_id: @room.id)
-    @entry2 = Entry.create(user_id: @user.id, room_id: @room.id)
-    redirect_to "/rooms/#{@room.id}"
+    room = Room.create(room_params)
+    entry_params[:entries][:user_ids].each do |id|
+      entry = Entry.new
+      entry.room_id = room.id
+      entry.user_id = id
+      entry.save
+    end
+    redirect_to "/rooms/#{room.id}"
   end
 
   def destroy
@@ -26,5 +31,7 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:name)
   end
 
-
+  def entry_params
+    params.require(:room).permit(entries: [user_ids: []])
+  end
 end

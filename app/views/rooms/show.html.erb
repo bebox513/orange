@@ -1,24 +1,26 @@
-<% @messages.each do |m| %>
-  <div class="message-block">
-    <div class="message-profile-block">
-      <% if m.user.avatar.attached? %>
-        <%= image_tag(m.user.avatar_resize, class: "message-avatar") %>
-      <% else %>
-        <%= fa_icon "user-circle", class: "message-avatar-none" %>
+<div class="message-contents">
+  <% @messages.each do |m| %>
+    <div>
+      <%= link_to user_path(m.user) do %>
+        <% if m.user.avatar.attached? %>
+          <%= image_tag(m.user.avatar_resize, class: "small-avatar") %>
+        <% else %>
+          <i class="fas fa-user-circle small-avatar-none avatar"></i>
+        <% end %>
+        <p class="name"><%= m.user.name %></p>
       <% end %>
-      <p class="message-name"><%= m.user.name %></p>
+      <p><%= safe_join(m.content.split("\n"),tag(:br))%></p>
     </div>
-    <p class="message"><%= safe_join(m.content.split("\n"),tag(:br))%></p>
-  </div>
-
-<% end %>
-
-<div class="message-form-block">
-  <%= form_for @message do |f| %>
-    <%= f.text_area :content, class: "message-form" %>
-    <%= f.hidden_field :room_id, :value => @room.id %>
-    <%= button_tag :type => "submit", :class =>"message-btn" do %>
-      <%= fa_icon "paper-plane" %>
-    <% end %>
   <% end %>
+</div>
+<div class="message-form-block">
+  <div class="">
+    <%= form_for @message do |f| %>
+        <%= f.text_area :content %>
+      <%= f.hidden_field :room_id, :value => @room.id %>
+      <%= button_tag :type => "submit", :class =>"message-btn" do %>
+        <i class="fas fa-paper-plane"></i>
+      <% end %>
+    <% end %>
+  </div>
 </div>

@@ -1,7 +1,13 @@
-<div class="new-room-block container">
-  <h2 class="new-room-title">チャットルームの作成</h2>
-  <%= form_for @room do |f| %>
-    <%= f.text_field :name, placeholder: "利用者名", class: "new-room-form" %>
-    <%= f.submit "作成する", class: "new-room-btn" %>
-  <% end %>
+<div class="page-title">
+  <p>チャットルームの作成</p>
 </div>
+
+<%= form_for @room do |r| %>
+  <%= r.text_field :name %>
+  <%= r.fields_for :entries do |e| %>
+    <%= e.collection_check_boxes(:user_ids, @matchers, :id, :name, include_hidden: false) do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
+    <%= r.submit "作成する" %>
+  <% end %>
+<% end %>
