@@ -415,7 +415,7 @@ body{
 }
 
 #scroll{
-  overflow-y: scroll;  
+  overflow-y: scroll;
 }
 
 #message-contents {
@@ -431,7 +431,7 @@ body{
       top: 5px;
       left: 5px;
     }
-    .name {
+    .name, .company {
       display: inline-block;
     }
     a {

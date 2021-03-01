@@ -7,6 +7,7 @@
         <i class="fas fa-user-circle small-avatar-none avatar"></i>
       <% end %>
       <p class="name"><%= m.user.name %></p>
+      <p class="company"><%= m.user.company %></p>
     <% end %>
     <p><%= safe_join(m.content.split("\n"),tag(:br))%></p>
   </div>
