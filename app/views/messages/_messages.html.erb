@@ -1,0 +1,13 @@
+<% @messages.each do |m| %>
+  <div>
+    <%= link_to user_path(m.user) do %>
+      <% if m.user.avatar.attached? %>
+        <%= image_tag(m.user.avatar_resize, class: "small-avatar") %>
+      <% else %>
+        <i class="fas fa-user-circle small-avatar-none avatar"></i>
+      <% end %>
+      <p class="name"><%= m.user.name %></p>
+    <% end %>
+    <p><%= safe_join(m.content.split("\n"),tag(:br))%></p>
+  </div>
+<% end %>
