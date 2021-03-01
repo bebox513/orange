@@ -548,7 +548,7 @@ body{
   }
 }
 
-#morePostBlock {
+#morePostBlock {//これいらないかもーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   width: 600px;
   height: 200px;
   margin: 0 auto;
@@ -563,6 +563,10 @@ body{
     border-radius: 5px;
     text-decoration: none;
   }
+}
+
+nav.pagination {
+  display: none;
 }
 
 .mypage-contents{

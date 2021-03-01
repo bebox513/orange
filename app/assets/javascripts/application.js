@@ -16,6 +16,7 @@
 //= bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= require jquery.jscroll.min.js
 //= require_tree .
 
 $(document).on("turbolinks:load", function () {
@@ -47,5 +48,15 @@ $(document).on("turbolinks:load", function () {
     const target = document.getElementById('scroll');
     target.scrollIntoView(false);
   }
+});
 
+$(window).on('scroll', function() {
+  scrollHeight = $(document).height();
+  scrollPosition = $(window).height() + $(window).scrollTop();
+  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+    $('.jscroll').jscroll({
+      contentSelector: '.scroll-list',
+      nextSelector: 'span.next:last a'
+    });
+  }
 });

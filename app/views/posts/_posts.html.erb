@@ -1,29 +1,32 @@
-<% @posts.each do |post| %>
-  <div class="post-block">
-    <% if post.img.attached? %>
-      <div class="post-img">
-        <%= image_tag(post.img_resize) %>
-      </div>
-    <% end %>
-    <%= link_to user_path(post.user.id) do %>
-      <% if post.user.avatar.attached? %>
-        <%= image_tag(post.user.avatar_resize, class: "small-avatar avatar") %>
-      <% else %>
-        <i class="fas fa-user-circle small-avatar-none avatar"></i>
+<div class="scroll-list jscroll">
+  <% @posts.each do |post| %>
+    <div class="post-block">
+      <% if post.img.attached? %>
+        <div class="post-img">
+          <%= image_tag(post.img_resize) %>
+        </div>
       <% end %>
-    <% end %>
-    <%= link_to post_path(post.id) do %>
-      <div class="link-block">
-      </div>
-    <% end %>
-    <div>
       <%= link_to user_path(post.user.id) do %>
-        <p class="name"><%= post.user.name %></p>
+        <% if post.user.avatar.attached? %>
+          <%= image_tag(post.user.avatar_resize, class: "small-avatar avatar") %>
+        <% else %>
+          <i class="fas fa-user-circle small-avatar-none avatar"></i>
+        <% end %>
       <% end %>
-      <p><%=safe_join(post.content.split("\n"),tag(:br))%></p>
+      <%= link_to post_path(post.id) do %>
+        <div class="link-block">
+        </div>
+      <% end %>
+      <div>
+        <%= link_to user_path(post.user.id) do %>
+          <p class="name"><%= post.user.name %></p>
+        <% end %>
+        <p><%=safe_join(post.content.split("\n"),tag(:br))%></p>
+      </div>
+      <div id="like-button-<%= post.id %>" class="like-button">
+        <%= render partial: 'likes/like', locals: { post: post } %>
+      </div>
     </div>
-    <div id="like-button-<%= post.id %>" class="like-button">
-      <%= render partial: 'likes/like', locals: { post: post } %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+  <%= paginate @posts %>
+</div>
