@@ -414,7 +414,11 @@ body{
   font-size: 15px;
 }
 
-.message-contents {
+#scroll{
+  overflow-y: scroll;  
+}
+
+#message-contents {
   margin-bottom: 121px;
   div {
     min-height: 100px;

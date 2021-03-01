@@ -42,4 +42,10 @@ $(document).on("turbolinks:load", function () {
     reader.readAsDataURL(imageFile);
     return def.promise();
   };
+
+  if($('#scroll').length){
+    const target = document.getElementById('scroll');
+    target.scrollIntoView(false);
+  }
+
 });
