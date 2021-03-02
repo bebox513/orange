@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @followers = @user.followers
     @followings = @user.followings
-    @posts = @user.posts.order(id: "DESC")
+    @posts = @user.posts.page(params[:page]).order(id: "DESC").per(10)
 
     return unless request.xhr?
 
