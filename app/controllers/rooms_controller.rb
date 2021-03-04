@@ -1,6 +1,11 @@
 class RoomsController < ApplicationController
+  def index
+    @entries = current_user.entries
+  end
+
   def show
     @room = Room.find(params[:id])
+    @entries = @room.entries
     @message = Message.new
     @messages = @room.messages
   end
@@ -13,6 +18,7 @@ class RoomsController < ApplicationController
 
   def create
     room = Room.create(room_params)
+    Entry.create(user_id: current_user.id, room_id: room.id)
     entry_params[:entries][:user_ids].each do |id|
       entry = Entry.new
       entry.room_id = room.id
