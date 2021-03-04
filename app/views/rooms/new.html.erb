@@ -1,13 +1,28 @@
 <div class="page-title">
   <p>チャットルームの作成</p>
 </div>
-
-<%= form_for @room do |r| %>
-  <%= r.text_field :name %>
-  <%= r.fields_for :entries do |e| %>
-    <%= e.collection_check_boxes(:user_ids, @matchers, :id, :name, include_hidden: false) do |b| %>
-      <%= b.label { b.check_box + b.text } %>
+<div class="room-new-block">
+  <%= form_for @room do |room| %>
+    <div class="room-name">
+      <p><%= room.label :name, "ルームネーム" %></p>
+      <%= room.text_field :name %>
+    </div>
+    <%= room.fields_for :entries do |e| %>
+      <%= e.collection_check_boxes(:user_ids, @matchers, :id, :name) do |user| %>
+        <div>
+          <%= user.label do %>
+            <%= user.check_box %>
+            <% if user.object.avatar.attached? %>
+              <%= image_tag(user.object.avatar_resize, class: "small-avatar") %>
+            <% else %>
+              <i class="fas fa-user-circle small-avatar-none avatar"></i>
+            <% end %>
+            <p><%= user.object.name %></p>
+            <p><%= user.object.company %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <%= room.submit "作成する" %>
     <% end %>
-    <%= r.submit "作成する" %>
   <% end %>
-<% end %>
+</div>
