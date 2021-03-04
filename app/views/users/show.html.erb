@@ -26,7 +26,7 @@
   </div>
 </div>
 <div class="mypage-contents">
-  <%= link_to "フォロー中一覧", user_path(params[:id], type: "followings"), remote: true %>
+  <%= link_to "フォロー中一覧", user_path(params[:id], type: "followings", class: "active"), remote: true %>
   <%= link_to "フォロワー一覧", user_path(params[:id], type: "followers"), remote: true %>
   <%= link_to "投稿一覧", user_path(params[:id], type: "posts"), remote: true %>
 </div>
