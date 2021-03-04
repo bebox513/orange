@@ -99,7 +99,7 @@ end
 
 User.ids.each do |follower_user_id|
   User.ids.shuffle.each do |following_user_id|
-    if follower_user_id != following_user_id && rand(4) == 0
+    if follower_user_id != following_user_id && rand(2) == 0
       Relationship.create!(
         follower_id: follower_user_id,
         following_id: following_user_id
