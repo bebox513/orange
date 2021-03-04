@@ -2,20 +2,28 @@
   <p>メッセージルーム一覧</p>
 </div>
 <div class="room-index-block">
-  <ul>
-    <% @entries.each do |entry| %>
-      <%= link_to room_path(entry.room_id) do %>
-        <% if entry.room.name.present? %>
-          <li><span><%= entry.room.name %></span></li>
-        <% else %>
-          <li><span>
-            <% entry.room.entries.each do |room_entry| %>
-              <%= room_entry.user.name %>,
-            <% end %>
-            のルーム
-          </span></li>
+  <% if current_user.entries.present? %>
+    <ul>
+      <p class="link"><%= link_to "新たにチャットルームを作成する", new_room_path %></p>
+
+      <% @entries.each do |entry| %>
+        <%= link_to room_path(entry.room_id) do %>
+          <% if entry.room.name.present? %>
+            <li><%= entry.room.name %></li>
+          <% else %>
+            <li>
+              <% entry.room.entries.each do |room_entry| %>
+                <%= room_entry.user.name %>,
+              <% end %>
+              のルーム
+            </li>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  <% else %>
+    <p>まだ誰ともチャットを始めていないようです。<br>
+      まずはチャットルームを作ってみましょう。</p>
+      <p class="link"><%= link_to "新たにチャットルームを作成する", new_room_path %></p>
+  <% end %>
 </div>
