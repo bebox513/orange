@@ -1,4 +1,20 @@
 <div id="scroll">
+  <div class="message-header">
+    <p class="title">参加ユーザー</p>
+    <% @entries.each do |entry| %>
+      <div>
+        <%= link_to user_path(entry.user) do %>
+          <% if entry.user.avatar.attached? %>
+            <%= image_tag(entry.user.avatar_resize, class: "minimum-avatar") %>
+          <% else %>
+            <i class="fas fa-user-circle minimum-avatar-none"></i>
+          <% end %>
+          <p class="name"><%= entry.user.name %></p>
+          <p class="company"><%= entry.user.company %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <div id="message-contents">
     <%= render 'messages/messages' %>
   </div>
