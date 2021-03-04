@@ -60,6 +60,16 @@ body{
   color: 	#808080;
 }
 
+.minimum-avatar {
+  width: 30px;
+  border-radius: 95px;
+}
+
+.minimum-avatar-none {
+  font-size: 30px;
+  color: 	#808080;
+
+}
 
 .search-switch {
   width: 600px;
@@ -171,10 +181,30 @@ body{
   img, i {
     margin: 10px 35px 10px 35px;
   }
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
+  .name {
+    text-align: center;
+    font-size: 30px;
+  }
  }
 
 .sidebar-contents {
+  p {
+    font-size: 20px;
+  a {
+    padding-left: 60px;
+    display: block;
+    width: 100%;
+    &:hover {
+      color: white;
+      background-color: #FF9800;
 
+    }
+  }
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -378,45 +408,143 @@ body{
   padding-top: 20px;
 }
 
-//↓ sign-in-blockと全く同じ
-.new-room-block{
-  margin-top: 150px;
-  text-align: center;
-  border: solid 1px;
-  width: 700px;
-  padding:50px;
-  border-radius: 25px;
-  max-width: 700px;
-  width: 90%;
-  min-width: 250px;
+
+
+
+
+
+
+
+.room-new-block {
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #FF9800;
+  background-color: #FFF8E1;
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-left: 40px;
+  .room-name {
+    padding: 0px;
+    font-size: 18px;
+    height: 50px;
+    input {
+      position: initial;
+      width: 300px;
+    }
+  }
+  input[type="submit"] {
+    background-color: #FF9800;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 70px;
+    margin: 30px 225px;
+  }
+  div {
+    height: 60px;
+    position: relative;
+    padding-left: 110px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    p {
+      font-size: 18px;
+      display: inline-block;
+    }
+    input {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+    i, img {
+      position: absolute;
+      left: 40px;
+      top: 0px;
+    }
+  }
 }
 
-.new-room-title{
-  font-weight: 600;
-}
-
-.new-roo-form{
-  width: 90%;
-  height: 30px;
-  border-radius: 5px;
-  margin-top: 40px;
-}
-
-.new-room-btn{
-  padding: 2px;
-  color: white;
-  background-color: #0099FF;
+.room-index-block {
+  width: 600px;
   border: 1px solid;
   border-radius: 5px;
-  margin-top: 40px;
-  width: 100px;
-  height: 40px;
-  font-size: 15px;
+  border-color: #FF9800;
+  background-color: #FFF8E1;
+  margin: 0 auto;
+  padding: 10px;
+  min-height: 300px;
+  font-size: 25px;
+  li {
+    padding-bottom: 10px;
+  }
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
+
 }
+
+
+
+
 
 #scroll{
   overflow-y: scroll;
 }
+
+.message-header {
+  z-index: 1;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  padding: 5px;
+  padding-top: 30px;
+  border-bottom: 2px solid;
+  border-color: #FF9800;
+  background-color: #FFF8E1;
+  .title {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  div {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    padding-top: 5px;
+    margin-right: 10px;
+    p {
+      display: inline-block;
+      margin: 0px;
+    }
+    i,img {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+    a {
+      color: #333333;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #message-contents {
   margin-bottom: 121px;
@@ -684,15 +812,6 @@ nav.pagination {
   margin: 40px;
 }
 
-.sidebar-name{
-  font-size: 30px;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  &:hover{
-    color: black;
-  }
-}
 
 
 
