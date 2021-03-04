@@ -1,6 +1,16 @@
 <div class="scroll-list jscroll">
   <% @posts.each do |post| %>
     <div class="post-block">
+      <% if post.user == current_user %>
+        <span>
+          <%= link_to "/posts/#{post.id}", method: :delete, data: {confirm: "削除しますか？"}  do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+          <%= link_to edit_post_path(post) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </span>
+      <% end %>
       <% if post.img.attached? %>
         <div class="post-img">
           <%= image_tag(post.img_resize) %>

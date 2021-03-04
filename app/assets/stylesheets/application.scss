@@ -201,7 +201,6 @@ body{
     &:hover {
       color: white;
       background-color: #FF9800;
-
     }
   }
   }
@@ -258,6 +257,17 @@ body{
   border-top: none;
   border-color: #FF9800;
   position: relative;
+  span {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    z-index: 2;
+    i {
+      font-size: 16px;
+      color: #FF9800;
+      padding-right: 5px;
+    }
+  }
   .avatar {
     position: absolute;
     top: 5px;
@@ -481,7 +491,17 @@ body{
     color: #333333;
     text-decoration: none;
   }
-
+  .link {
+    text-align: center;
+    padding-bottom: 20px;
+    a {
+      text-decoration: underline;
+      color: grey;
+      &:hover {
+        color: #333333;
+      }
+    }
+  }
 }
 
 
@@ -703,13 +723,18 @@ nav.pagination {
   border-top: 4px solid;
   border-color: #FF9800;
   text-align: center;
-  padding-top: 8px;
   a {
-    margin: 10px;
     vertical-align: middle;
     text-decoration: none;
     color: #333333;
     font-size: 20px;
+    height: 100%;
+    display: inline-block;
+    padding: 10px 15px;
+    &:hover {
+      color: white;
+      background-color: #FF9800;
+    }
   }
 }
 
@@ -1191,12 +1216,14 @@ nav.pagination {
   height: 700px;
   margin: 0 auto;
   textarea {
+    z-index: 3;
     border-radius: 5px;
     border: 1px solid;
     height: 145px;
     width: 468px;
     outline: none;
     resize: none;
+    position: relative;
   }
   input {
     padding: 2px;
@@ -1220,6 +1247,7 @@ nav.pagination {
   background-color: #FF9800;
   position: relative;
   i {
+    z-index: 1;
     font-size: 468px;
     position: absolute;
     top: -58px;

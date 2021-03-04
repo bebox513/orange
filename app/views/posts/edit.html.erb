@@ -1,0 +1,20 @@
+<div class="page-title">
+  <p>投稿編集</p>
+</div>
+<div class="post-new-block">
+  <%= form_for @post do |f| %>
+    <%= f.label :img, class: "file-form" do %>
+      <div id="img_preview">
+        <% if @post.img.attached? %>
+          <%= image_tag(@post.img_resize) %>
+        <% else %>
+          <i class="fas fa-image"></i>
+        <% end %>
+      </div>
+      <%= f.file_field :img, style: 'display:none' %>
+    <% end %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit "作成する" %>
+  <% end %>
+</div>
