@@ -5,6 +5,14 @@
   <p><%= @care_diary.date.year %>年</p>
   <p><%= @care_diary.date.month %>月</p>
 </div>
+<div class="care-diary-contents">
+  <%= link_to "/@care_diarys/#{@care_diary.id}", method: :delete, data: {confirm: "削除しますか？"}  do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+  <%= link_to edit_care_diary_path(@care_diary) do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+</div>
 <div class="care-diary-block-show">
   <div class="block1">
     <p class="date"><%= @care_diary.date.day %>日</p>
@@ -18,4 +26,3 @@
   </div>
   <p class="notes">特記事項：<br><%= @care_diary.notes %></p>
 </div>
-<%= link_to "介護日誌編集", edit_care_diary_path(params[:id]) %>

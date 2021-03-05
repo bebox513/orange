@@ -892,16 +892,26 @@ nav.pagination {
   resize: none;
 }
 
+.care-diary-edit {
+  position: absolute;
+  top: 190px;
+  left: 375px;
+}
+
 .care-diary-btn{
   padding: 2px;
   color: white;
-  background-color: #0099FF;
+  background-color: #FF9800;
   border: 1px solid;
   border-radius: 5px;
   margin: 40px 40%;
   width: 100px;
   height: 40px;
   font-size: 15px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .page-title{
@@ -923,6 +933,17 @@ nav.pagination {
   margin-left: 90px;
   p{
     margin: 0;
+  }
+}
+
+.care-diary-contents {
+  position: absolute;
+  top: 225px;
+  left: 410px;
+  i {
+    color: #FF9800;
+    font-size: 25px;
+    margin: 5px;
   }
 }
 

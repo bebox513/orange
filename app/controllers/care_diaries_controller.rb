@@ -49,6 +49,13 @@ class CareDiariesController < ApplicationController
     redirect_to "/care_diaries/#{params[:id]}"
   end
 
+  def destroy
+    care_diary = CareDiary.find(params[:id])
+    care_diary.destroy
+    redirect_to care_diaries_path
+
+  end
+
   private
   def care_diary_params
     params.require(:care_diary).permit(:notes, :temperature, :date, :breakfast_meal_intake, :lunch_meal_intake, :dinner_meal_intake, :user_id, :name)

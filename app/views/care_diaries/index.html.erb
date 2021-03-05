@@ -1,6 +1,9 @@
 <div class="page-title">
   <p><%= current_user.name %>の介護記録</p>
 </div>
+<div class="care-diary-edit">
+  <p class="care-diary-btn"><%= link_to "介護日誌作成", new_care_diary_path %></p>
+</div>
 <% if @care_diaries.present? %>
   <div class="care-diary-date">
     <p><%= @cd_date.year %>年</p>
@@ -31,4 +34,3 @@
     <% end %>
   </div>
 <% end %>
-<%= link_to "介護日誌作成", new_care_diary_path %>
