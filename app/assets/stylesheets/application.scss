@@ -1163,9 +1163,28 @@ nav.pagination {
   }
 }
 
+.care-recipient-btn {
+  width: 700px;
+  margin: 0 auto;
+  padding: 0px 270px;
+  padding-bottom: 35px;
+  a {
+    color: grey;
+    font-size: 20px;
+    text-decoration: underline;
+   }
+}
 
-
-
+.care-recipient-contents {
+  position: absolute;
+  top: 170px;
+  left: 280px;
+  i {
+    color: #FF9800;
+    font-size: 25px;
+    margin: 5px;
+  }
+}
 
 
 .care-recipient-tbl {

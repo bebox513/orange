@@ -12,12 +12,14 @@
       <%= f.label :birthday, "誕生日", class: "care-recipient-label" %>
       <%= f.date_field :birthday %>
     </div>
-    <div class="care-recipient-block3">
-      <%= f.label :facility_in_charge, "担当事業所", class: "care-recipient-label" %>
-      <%= f.text_field :facility_in_charge, class: "facility-in-charge" %>
-      <%= f.label :manager_in_charge, "担当ケアマネージャー", class: "care-recipient-label" %>
-      <%= f.text_field :manager_in_charge, class: "manager-in-charge" %>
-    </div>
+    <% if current_user == 2 %>
+      <div class="care-recipient-block3">
+        <%= f.label :facility_in_charge, "担当事業所", class: "care-recipient-label" %>
+        <%= f.text_field :facility_in_charge, class: "facility_in_charge" %>
+        <%= f.label :manager_in_charge, "担当ケアマネージャー", class: "care-recipient-label" %>
+        <%= f.text_field :manager_in_charge, class: "manager_in_charge" %>
+      </div>
+    <% end %>
     <div class="care-recipient-block2">
       <%= f.label :degree_care_required, "要介護度", class: "care-recipient-label" %>
       <%= f.select :degree_care_required, [[1],[2],[3],[4],[5]], {}, class: "degree-care-required" %>

@@ -7,4 +7,7 @@
     <%= f.submit "検索する", class: "btn" %>
   <% end %>
 </div>
+<div class="care-recipient-btn">
+  <%= link_to "利用者を作成する", new_care_recipient_path %>
+</div>
 <%= render 'care_recipients/care_recipients' %>

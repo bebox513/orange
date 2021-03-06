@@ -34,6 +34,11 @@ class CareRecipientsController < ApplicationController
     end
   end
 
+  def destroy
+    care_recipient = CareRecipient.find(params[:id])
+    care_recipient.destroy
+  end
+
   def search
     if params[:name].present?
       @care_recipients = CareRecipient.where('name LIKE ?', "%#{params[:name]}%")

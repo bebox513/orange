@@ -1,6 +1,14 @@
 <div class="page-title">
   <p>個別情報</p>
 </div>
+<div class="care-recipient-contents">
+  <%= link_to "/@care_recipients/#{@care_recipient.id}", method: :delete, data: {confirm: "削除しますか？"}  do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+  <%= link_to edit_care_recipient_path(@care_recipient) do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+</div>
 <div class="care-recipient-show-block1">
   <div class="care-recipient-show-block2">
     <p>名前：<%= @care_recipient.name %></p>
@@ -22,4 +30,3 @@
     <p class="notes">特記事項：<br><%= safe_join(@care_recipient.notes.split("\n"),tag(:br)) %></p>
   </div>
 </div>
-<%= link_to "情報編集", edit_care_recipient_path(params[:id]) %>
