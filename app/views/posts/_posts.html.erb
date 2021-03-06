@@ -28,9 +28,14 @@
         </div>
       <% end %>
       <div>
+        <div class="name">
+
         <%= link_to user_path(post.user.id) do %>
-          <p class="name"><%= post.user.name %></p>
+            <p><%= post.user.name %></p>
+            <p><%= post.user.company %></p>
         <% end %>
+      </div>
+
         <p><%=safe_join(post.content.split("\n"),tag(:br))%></p>
       </div>
       <div id="like-button-<%= post.id %>" class="like-button">
