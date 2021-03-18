@@ -59,4 +59,9 @@ class User < ApplicationRecord
     result
   end
 
+  def self.guest(role)
+    find_or_create_by!(name: 'ゲストユーザ', email: SecureRandom.urlsafe_base64(5) + '@example.com', role: role) do |user|
+      user.password = SecureRandom.urlsafe_base64(7)
+    end
+  end
 end

@@ -1,20 +1,42 @@
 <div class="sign-up-block">
-  <%= link_to new_user_registration_path(role: 1), class: "sign-up-block2" do %>
+  <span>
     <div>
-      <p>ご本人様、またはご家族のご利用はこちら</p>
-      <i class="fas fa-house-user"></i>
+      <%= link_to new_user_registration_path(role: 1), class: "sign-up-block2" do %>
+        <p>ご本人様、またはご家族のご利用はこちら</p>
+        <i class="fas fa-house-user"></i>
+      <% end %>
     </div>
-  <% end %>
-  <%= link_to new_user_registration_path(role: 2) do %>
     <div>
-      <p>介護施設の職員のご利用はこちら</p>
-      <i class="fas fa-hospital-alt"></i>
+      <%= link_to new_user_registration_path(role: 2) do %>
+        <p>介護施設の職員のご利用はこちら</p>
+        <i class="fas fa-hospital-alt"></i>
+      <% end %>
     </div>
-  <% end %>
-  <%= link_to new_user_registration_path(role: 3) do %>
     <div>
-      <p>ケアマネージャーのご利用はこちら</p>
-      <i class="fas fa-hospital-user"></i>
+      <%= link_to new_user_registration_path(role: 3) do %>
+        <p>ケアマネージャーのご利用はこちら</p>
+        <i class="fas fa-hospital-user"></i>
+      <% end %>
     </div>
-  <% end %>
+  </span>
+  <span>
+    <div>
+      <%= link_to users_guest_sign_in_path(role: 1), method: :post do %>
+        <p>ゲストログイン</p>
+        <p>(閲覧用)</p>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to users_guest_sign_in_path(role: 2), method: :post do %>
+        <p>ゲストログイン</p>
+        <p>(閲覧用)</p>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to users_guest_sign_in_path(role: 3), method: :post do %>
+        <p>ゲストログイン</p>
+        <p>(閲覧用)</p>
+      <% end %>
+    </div>
+  </span>
 </div>
