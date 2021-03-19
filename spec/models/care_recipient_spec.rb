@@ -40,21 +40,11 @@ RSpec.describe CareRecipient, type: :model do
       care_recipient.valid?
       expect(care_recipient.errors[:age]).to include("は数値で入力してください")
     end
-    it "担当事業所がなければ無効な状態であること" do
-      care_recipient = build(:care_recipient, facility_in_charge: nil)
-      care_recipient.valid?
-      expect(care_recipient.errors[:facility_in_charge]).to include("を入力してください")
-    end
     it "担当事業所が50文字以内であること" do
       care_recipient = build(:care_recipient, facility_in_charge: "a" * 10)
       expect(care_recipient).to be_valid
     end
-    it "ケアマネージャーがなければ無効な状態であること" do
-      care_recipient = build(:care_recipient, manager_in_charge: nil)
-      care_recipient.valid?
-      expect(care_recipient.errors[:manager_in_charge]).to include("を入力してください")
-    end
-    it "担当ケアマネージャーが10文字以内であること" do
+    it "ケアマネージャーが10文字以内であること" do
       care_recipient = build(:care_recipient, manager_in_charge: "a" * 10)
       expect(care_recipient).to be_valid
     end

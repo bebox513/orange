@@ -6,11 +6,6 @@ RSpec.describe Room, type: :model do
       room = create(:room)
       expect(room).to be_valid
     end
-    it "ルームネームがなければ無効な状態であること" do
-      room = build(:room, name: nil)
-      room.valid?
-      expect(room.errors[:name]).to include("を入力してください")
-    end
     it "ルームネームが10文字以内であること" do
       room = build(:room, name: "a" * 10)
       expect(room).to be_valid
