@@ -1,4 +1,6 @@
 class CareRecipientsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :user_role?
 
   def index
     @care_recipients = current_user.care_recipients.all
@@ -48,6 +50,13 @@ class CareRecipientsController < ApplicationController
   end
 
   private
+  def user_role?
+    if current_user.role == 1
+      redirect_to "/"
+    end
+  end
+
+
   def care_recipient_params
     params.require(:care_recipient).permit(
       :name,
