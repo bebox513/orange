@@ -1,24 +1,44 @@
-# README
+# orange
+***
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ご家族と、関係施設、ケアマネジャーの情報共有を目的に作成しました。
 
-Things you may want to cover:
+レスポンシブ対応していますので、スマホからもご確認いただけます。
 
-* Ruby version
+<img width="1792" alt="スクリーンショット 2021-03-29 17 01 12" src="https://user-images.githubusercontent.com/61938584/112808635-28536880-90b4-11eb-8148-a7e45d73469f.png">
 
-* System dependencies
+# URL
+***
 
-* Configuration
+aaaaaaaaaaaaaaaaaaaaaaaaa
 
-* Database creation
+# 使用技術
+***
+- Ruby 2.6.3
+- Ruby on Rails 5.2.4
+- MySQL 8.0.19
+- Nginx
+- Unicorn
+- AWS
+ - VPC
+ - EC2
 
-* Database initialization
+# 機能一覧
+- ユーザー登録、ログイン機能(devise)
+- 投稿機能
+- コメント機能
+- いいねいのう(Ajax)
+- フォロー機能(Ajax)
+- 画像投稿機能
+- 画像プレビュー機能(javascript、jquery)
+- ページネーション機能(kaminari)
+- 無限スクロール機能(Ajax)
+- 検索機能
+- メッセージ機能
+- 介護記録機能
+- 利用者登録機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# テスト
+- RSpec
+ - 単体テスト(model)
+ - 統合テスト(feature)
