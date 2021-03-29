@@ -3,10 +3,10 @@
     <div class="post-block">
       <% if post.user == current_user %>
         <span>
-          <%= link_to "/posts/#{post.id}", method: :delete, data: {confirm: "削除しますか？"}  do %>
+          <%= link_to "/posts/#{post.id}", class: "post-destroy-btn", method: :delete, data: {confirm: "削除しますか？"} do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
-          <%= link_to edit_post_path(post) do %>
+          <%= link_to edit_post_path(post), class: "post-edit-btn" do %>
             <i class="fas fa-edit"></i>
           <% end %>
         </span>
