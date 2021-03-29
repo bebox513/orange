@@ -20,8 +20,8 @@ aaaaaaaaaaaaaaaaaaaaaaaaa
 - Nginx
 - Unicorn
 - AWS
- - VPC
- - EC2
+  - VPC
+  - EC2
 
 # 機能一覧
 - ユーザー登録、ログイン機能(devise)
@@ -40,5 +40,5 @@ aaaaaaaaaaaaaaaaaaaaaaaaa
 
 # テスト
 - RSpec
- - 単体テスト(model)
- - 統合テスト(feature)
+  - 単体テスト(model)
+  - 統合テスト(feature)
