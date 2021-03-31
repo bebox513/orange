@@ -9,7 +9,7 @@
   <%= link_to "/@care_diarys/#{@care_diary.id}", method: :delete, data: {confirm: "削除しますか？"}  do %>
     <i class="fas fa-trash-alt"></i>
   <% end %>
-  <%= link_to edit_care_diary_path(@care_diary) do %>
+  <%= link_to edit_care_diary_path(@care_diary), class: "care-diary-edit-btn" do %>
     <i class="fas fa-edit"></i>
   <% end %>
 </div>
