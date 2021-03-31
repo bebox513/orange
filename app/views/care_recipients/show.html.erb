@@ -5,7 +5,7 @@
   <%= link_to "/@care_recipients/#{@care_recipient.id}", method: :delete, data: {confirm: "削除しますか？"}  do %>
     <i class="fas fa-trash-alt"></i>
   <% end %>
-  <%= link_to edit_care_recipient_path(@care_recipient) do %>
+  <%= link_to edit_care_recipient_path(@care_recipient), class: "care-recipient-edit-btn" do %>
     <i class="fas fa-edit"></i>
   <% end %>
 </div>
